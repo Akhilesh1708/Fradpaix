@@ -4,11 +4,56 @@
 
 const CRM_STORE_KEY = 'fradpaix-crm-leads';
 
+// Pull the Sheets URL from script.js (defined there as window.FradpaixSheets)
+function getSheetsUrl() {
+  return window._FRADPAIX_SHEETS_URL || '';
+}
+
 function getCrmLeads() {
   try { return JSON.parse(localStorage.getItem(CRM_STORE_KEY)) || []; } catch { return []; }
 }
 function saveCrmLeads(leads) {
   localStorage.setItem(CRM_STORE_KEY, JSON.stringify(leads));
+}
+
+/* ---- Fetch leads from Google Sheets and merge into localStorage ---- */
+function syncLeadsFromSheets(callback) {
+  const url = getSheetsUrl();
+  if (!url) { callback && callback(); return; }
+
+  const indicator = document.getElementById('crm-sync-indicator');
+  if (indicator) indicator.style.display = 'inline';
+
+  fetch(url + '?type=leads', { cache: 'no-store' })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.ok || !Array.isArray(data.leads)) return;
+      const remote  = data.leads.filter(l => l.id && l.name); // skip empty rows
+      const local   = getCrmLeads();
+      const localIds = new Set(local.map(l => l.id));
+
+      // Merge: remote leads not in local get added; keep local edits (status changes)
+      const merged = [...local];
+      remote.forEach(remoteLead => {
+        if (!localIds.has(remoteLead.id)) {
+          merged.push(remoteLead);
+        }
+      });
+
+      // Sort by createdAt desc (newest first)
+      merged.sort((a, b) => {
+        const ta = new Date(a.createdAt).getTime() || 0;
+        const tb = new Date(b.createdAt).getTime() || 0;
+        return tb - ta;
+      });
+
+      saveCrmLeads(merged);
+    })
+    .catch(() => {})
+    .finally(() => {
+      if (indicator) indicator.style.display = 'none';
+      callback && callback();
+    });
 }
 
 function esc(v) {
@@ -167,6 +212,111 @@ function renderCrm() {
 
   renderStats(getCrmLeads()); // stats always on full set
   renderLeads(leads);
+}
+
+/* ---- Init dashboard ---- */
+function initCrmDashboard() {
+  if (!document.getElementById('crm-list')) return;
+
+  // Search + filters
+  document.getElementById('crm-search')?.addEventListener('input', renderCrm);
+  document.getElementById('crm-filter')?.addEventListener('change', renderCrm);
+  document.getElementById('crm-source-filter')?.addEventListener('change', renderCrm);
+
+  // Sort buttons
+  document.getElementById('sort-newest')?.addEventListener('click', function() {
+    sortOrder = 'newest';
+    document.getElementById('sort-newest')?.classList.add('active');
+    document.getElementById('sort-oldest')?.classList.remove('active');
+    renderCrm();
+  });
+  document.getElementById('sort-oldest')?.addEventListener('click', function() {
+    sortOrder = 'oldest';
+    document.getElementById('sort-oldest')?.classList.add('active');
+    document.getElementById('sort-newest')?.classList.remove('active');
+    renderCrm();
+  });
+
+  // Manual add form
+  document.getElementById('crm-manual-form')?.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('crm-manual-name').value.trim();
+    if (!name) { document.getElementById('crm-manual-name').focus(); return; }
+    const leads = getCrmLeads();
+    leads.unshift({
+      id:        `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      status:    'New',
+      createdAt: new Date().toLocaleString('en-IN'),
+      source:    document.getElementById('crm-manual-source').value,
+      name,
+      phone:     document.getElementById('crm-manual-phone').value.trim(),
+      location:  document.getElementById('crm-manual-location').value.trim(),
+      trip:      document.getElementById('crm-manual-trip').value.trim()
+    });
+    saveCrmLeads(leads);
+    this.reset();
+    renderCrm();
+  });
+
+  // Status change + delete + expand (event delegation)
+  document.getElementById('crm-list')?.addEventListener('change', function(event) {
+    if (!event.target.matches('.crm-status-select')) return;
+    const id = event.target.dataset.id;
+    const leads = getCrmLeads().map(l => l.id === id ? { ...l, status: event.target.value } : l);
+    saveCrmLeads(leads);
+    renderCrm();
+  });
+
+  document.getElementById('crm-list')?.addEventListener('click', function(event) {
+    // Delete
+    const delId = event.target.closest('[data-delete]')?.dataset.delete;
+    if (delId) {
+      if (!confirm('Delete this lead permanently?')) return;
+      saveCrmLeads(getCrmLeads().filter(l => l.id !== delId));
+      renderCrm();
+      return;
+    }
+    // Expand / collapse message
+    const expId = event.target.closest('[data-expand]')?.dataset.expand;
+    if (expId) {
+      const card = document.getElementById('lead-' + expId);
+      const expanded = card?.classList.toggle('expanded');
+      event.target.textContent = expanded ? 'show less ▴' : 'show more ▾';
+    }
+  });
+
+  // Export
+  document.getElementById('crm-export')?.addEventListener('click', function() {
+    const blob = new Blob([JSON.stringify(getCrmLeads(), null, 2)], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href     = URL.createObjectURL(blob);
+    link.download = `fradpaix-leads-${new Date().toISOString().slice(0,10)}.json`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+
+  // Clear all (admin only)
+  document.getElementById('crm-clear')?.addEventListener('click', function() {
+    if (CRM_AUTH.getRole() !== 'admin') return;
+    if (!confirm('Permanently delete ALL leads? This cannot be undone.')) return;
+    saveCrmLeads([]);
+    renderCrm();
+  });
+
+  // Refresh from Sheets button
+  document.getElementById('crm-refresh')?.addEventListener('click', function() {
+    this.disabled = true;
+    this.textContent = '⟳ Syncing…';
+    syncLeadsFromSheets(() => {
+      renderCrm();
+      this.disabled = false;
+      this.textContent = '⟳ Refresh';
+    });
+  });
+
+  // Initial load: render from localStorage immediately, then sync from Sheets
+  renderCrm();
+  syncLeadsFromSheets(() => renderCrm());
 }
 
 /* ---- Init dashboard ---- */
