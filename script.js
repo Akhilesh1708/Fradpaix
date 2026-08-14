@@ -15,6 +15,8 @@ document.head.appendChild(revealStyle);
 window.FradpaixSheets = (function () {
   const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx7pPdkVJev2a2mNewuIjCv9eUmPBQ0sB5IshMjJ2dRADrg6JjyYm7e74E2BeRSZXq6/exec';
 
+  // Expose URL for CRM to read back leads
+  window._FRADPAIX_SHEETS_URL = SHEETS_URL;
   function push(type, payload) {
     if (!SHEETS_URL) return;                         // not configured yet
     if (typeof navigator !== 'undefined' && !navigator.onLine) return; // offline
@@ -911,3 +913,4 @@ if (currentPage === 'contact.html') {
     }, 500);
   });
 })();
+
