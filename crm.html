@@ -319,9 +319,11 @@ body { background: #040a12; color: var(--clr-text); }
     <div class="crm-page-header">
       <div>
         <h1>Lead Management</h1>
-        <p id="crm-page-desc">Enquiries from all booking and contact forms · data stored on this device</p>
+        <p id="crm-page-desc">Enquiries from all booking and contact forms · synced from Google Sheets</p>
       </div>
       <div class="crm-page-header__actions">
+        <span id="crm-sync-indicator" style="display:none;font-size:.78rem;color:#7aaef5;padding:0 8px">⟳ Syncing…</span>
+        <button class="btn-crm" id="crm-refresh">⟳ Refresh</button>
         <button class="btn-crm" id="crm-export">⬇ Export JSON</button>
         <button class="btn-crm btn-crm--danger admin-only" id="crm-clear" style="display:none">🗑 Clear All</button>
       </div>
