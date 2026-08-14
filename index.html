@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fradpaix — Adventure Awaits</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Fradpaix Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">FRADPAIX</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="trekking.html" class="nav__drop-toggle">Trekking <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIMALAYAN TREKS</div>
+              <div class="nav__submenu-desc">Explore the majestic Himalayas</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="chanderkhani.html">Chanderkhani Pass Trek <span class="nav__submenu-altitude">3,440 m</span></a></li>
+              <li><a href="ghepan-lake.html">Ghepan Lake Trek <span class="nav__submenu-altitude">4,149 m</span></a></li>
+              <li><a href="miyar-valley.html">Miyar Valley Trek <span class="nav__submenu-altitude">3,990 m</span></a></li>
+              <li><a href="bara-bhangal.html">Bara Bhangal Trek <span class="nav__submenu-altitude">4,878 m</span></a></li>
+              <li><a href="parang-la.html">Parang La Trek <span class="nav__submenu-altitude">5,600 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="expedition.html" class="nav__drop-toggle">Expedition <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIGH ALTITUDE EXPEDITIONS</div>
+              <div class="nav__submenu-desc">Challenge yourself at extreme altitudes</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="mt-manirang.html">Mt. Manirang Expedition <span class="nav__submenu-altitude">6,593 m</span></a></li>
+              <li><a href="mt-yunam.html">Mt. Yunam Peak Expedition <span class="nav__submenu-altitude">6,111 m</span></a></li>
+              <li><a href="HanumanTibbaExpedition.html">Hanuman Tibba Expedition <span class="nav__submenu-altitude">5,982 m</span></a></li>
+              <li><a href="cb13-expedition.html">Mt. CB 13 Expedition <span class="nav__submenu-altitude">6,264 m</span></a></li>
+              <li><a href="cb14-expedition.html">Mt. CB 14 Expedition <span class="nav__submenu-altitude">6,078 m</span></a></li>
+              <li><a href="shinkun-west.html">Shinkun West Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="shinkun-south.html">Shinkun South Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="deo-tibba.html">Deo Tibba Expedition <span class="nav__submenu-altitude">6,001 m</span></a></li>
+              <li><a href="friendship-peak.html">Friendship Peak Expedition <span class="nav__submenu-altitude">5,289 m</span></a></li>
+              <li><a href="Kangyatse1.html">Kang Yatse I Expedition <span class="nav__submenu-altitude">6,401 m</span></a></li>
+              <li><a href="Kangyatse2.html">Kang Yatse II Expedition <span class="nav__submenu-altitude">6,250 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Courses <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Resources <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html" class="nav__cta">Book Now</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+  <!-- HERO SLIDER -->
+  <section class="hero-slider" id="home" aria-label="Hero slideshow">
+
+    <!-- Slides -->
+    <div class="hs__track" id="hs-track">
+
+      <div class="hs__slide hs__slide--active" data-index="0"
+           data-duration="12D/11N" data-altitude="4,878m" data-difficulty="Hard" data-price="₹18,500">
+        <div class="hs__bg" style="background-image:url('image6.jpeg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Himachal Pradesh · India</span>
+          <span class="hs__pill-sep">·</span><span>12D / 11N</span>
+          <span class="hs__pill-sep">·</span><span>Hard</span>
+          <span class="hs__pill-sep">·</span><span>4,878 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Manali · Himalayan Treks</span>
+          <h1 class="hs__title">Bara Bhangal<br>Trek</h1>
+          <p class="hs__sub">One of the most demanding high-altitude treks in Himachal — crossing two formidable passes into a village cut off from the world.</p>
+          <div class="hs__actions">
+            <a href="bara-bhangal.html" class="btn btn--primary">View Trek</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs__slide" data-index="1"
+           data-duration="11D/10N" data-altitude="5,600m" data-difficulty="Hard" data-price="₹25,000">
+        <div class="hs__bg" style="background-image:url('image5.jpeg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Spiti Valley → Ladakh</span>
+          <span class="hs__pill-sep">·</span><span>11D / 10N</span>
+          <span class="hs__pill-sep">·</span><span>Hard</span>
+          <span class="hs__pill-sep">·</span><span>5,600 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Lahaul · Trans-Himalayan</span>
+          <h1 class="hs__title">Parang La<br>Trek</h1>
+          <p class="hs__sub">A classic trans-Himalayan crossing connecting Spiti Valley to the Changthang plateau of Ladakh — ending at the breathtaking Tso Moriri lake.</p>
+          <div class="hs__actions">
+            <a href="parang-la.html" class="btn btn--primary">View Trek</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs__slide" data-index="2"
+           data-duration="7D/6N" data-altitude="3,990m" data-difficulty="Moderate" data-price="₹15,500">
+        <div class="hs__bg" style="background-image:url('image4.jpeg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Lahaul · Himachal Pradesh</span>
+          <span class="hs__pill-sep">·</span><span>7D / 6N</span>
+          <span class="hs__pill-sep">·</span><span>Moderate</span>
+          <span class="hs__pill-sep">·</span><span>3,990 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Lahaul · Himalayan Wilderness</span>
+          <h1 class="hs__title">Miyar Valley<br>Trek</h1>
+          <p class="hs__sub">Often called "Himachal's Yosemite" — a remote journey through dramatic granite walls, glacial rivers, and pristine alpine lakes.</p>
+          <div class="hs__actions">
+            <a href="miyar-valley.html" class="btn btn--primary">View Trek</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs__slide" data-index="3"
+           data-duration="3D/2N" data-altitude="4,149m" data-difficulty="Easy" data-price="₹7,500">
+        <div class="hs__bg" style="background-image:url('image3.jpeg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Lahaul · Himachal Pradesh</span>
+          <span class="hs__pill-sep">·</span><span>3D / 2N</span>
+          <span class="hs__pill-sep">·</span><span>Easy</span>
+          <span class="hs__pill-sep">·</span><span>4,149 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Lahaul · Alpine Lakes</span>
+          <h1 class="hs__title">Ghepan Lake<br>Trek</h1>
+          <p class="hs__sub">Discover the pristine Ghepan Lake at 4,149m — a hidden glacial gem in Lahaul Valley surrounded by towering peaks and wildflower meadows.</p>
+          <div class="hs__actions">
+            <a href="ghepan-lake.html" class="btn btn--primary">View Trek</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs__slide" data-index="4"
+           data-duration="3D/2N" data-altitude="3,440m" data-difficulty="Easy" data-price="₹6,500">
+        <div class="hs__bg" style="background-image:url('image2.jpg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Himachal Pradesh · India</span>
+          <span class="hs__pill-sep">·</span><span>3D / 2N</span>
+          <span class="hs__pill-sep">·</span><span>Easy</span>
+          <span class="hs__pill-sep">·</span><span>3,440 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Manali · Himalayan Treks</span>
+          <h1 class="hs__title">Chanderkhani<br>Pass Trek</h1>
+          <p class="hs__sub">A beautiful 3-day journey from Naggar to Malana, crossing the scenic Chanderkhani Pass with panoramic views of the Pir Panjal range.</p>
+          <div class="hs__actions">
+            <a href="chanderkhani.html" class="btn btn--primary">View Trek</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs__slide" data-index="5"
+           data-duration="19D/18N" data-altitude="6,593m" data-difficulty="Hard" data-price="₹45,000">
+        <div class="hs__bg" style="background-image:url('image7.jpg')"></div>
+        <div class="hs__overlay"></div>
+        <div class="hs__pill">
+          <span class="hs__pill-tag">Lahaul · Himachal Pradesh</span>
+          <span class="hs__pill-sep">·</span><span>19D / 18N</span>
+          <span class="hs__pill-sep">·</span><span>Hard</span>
+          <span class="hs__pill-sep">·</span><span>6,593 m</span>
+        </div>
+        <div class="hs__content container">
+          <span class="hs__eyebrow">Lahaul · High Altitude Expedition</span>
+          <h1 class="hs__title">Mt. Manirang<br>Expedition</h1>
+          <p class="hs__sub">Summit one of Himachal's highest peaks at 6,593m — a 19-day mountaineering expedition demanding prior climbing experience and technical skill.</p>
+          <div class="hs__actions">
+            <a href="mt-manirang.html" class="btn btn--primary">View Expedition</a>
+            <a href="booking.html" class="btn btn--ghost">Book This Trek</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.hs__track -->
+
+    <!-- Prev / Next arrows -->
+    <button class="hs__arrow hs__arrow--prev" id="hs-prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="hs__arrow hs__arrow--next" id="hs-next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="hs__dots">
+      <button class="hs__dot hs__dot--active" data-goto="0" aria-label="Slide 1"></button>
+      <button class="hs__dot" data-goto="1" aria-label="Slide 2"></button>
+      <button class="hs__dot" data-goto="2" aria-label="Slide 3"></button>
+      <button class="hs__dot" data-goto="3" aria-label="Slide 4"></button>
+      <button class="hs__dot" data-goto="4" aria-label="Slide 5"></button>
+      <button class="hs__dot" data-goto="5" aria-label="Slide 6"></button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="hs__progress"><div class="hs__progress-bar" id="hs-progress-bar"></div></div>
+
+    <!-- Stats bar -->
+    <div class="hs__stats-bar container">
+      <div class="hs__stat"><span class="hs__stat-num" id="hs-stat-duration">12D/11N</span><span class="hs__stat-label">Duration</span></div>
+      <div class="hs__stat"><span class="hs__stat-num" id="hs-stat-altitude">4,878m</span><span class="hs__stat-label">Max Altitude</span></div>
+      <div class="hs__stat"><span class="hs__stat-num" id="hs-stat-difficulty">Hard</span><span class="hs__stat-label">Difficulty</span></div>
+      <div class="hs__stat"><span class="hs__stat-num" id="hs-stat-price">₹18,500</span><span class="hs__stat-label">Starting Price</span></div>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#adventures" class="hero__scroll" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5v14M5 12l7 7 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </section><!-- /.hero-slider -->
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Bara Bhangal Trek</span><span>·</span>
+      <span>Parang La Trek</span><span>·</span>
+      <span>Miyar Valley Trek</span><span>·</span>
+      <span>Ghepan Lake Trek</span><span>·</span>
+      <span>Chanderkhani Pass</span><span>·</span>
+      <span>Mt. Manirang 6,593m</span><span>·</span>
+      <span>Himachal Pradesh</span><span>·</span>
+      <span>Ready With Frady!</span><span>·</span>
+      <span>Bara Bhangal Trek</span><span>·</span>
+      <span>Parang La Trek</span><span>·</span>
+      <span>Miyar Valley Trek</span><span>·</span>
+      <span>Ghepan Lake Trek</span><span>·</span>
+      <span>Chanderkhani Pass</span><span>·</span>
+      <span>Mt. Manirang 6,593m</span><span>·</span>
+      <span>Himachal Pradesh</span><span>·</span>
+      <span>Ready With Frady!</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- TREKS & EXPEDITIONS -->
+  <section class="adventures section" id="adventures">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Our Adventures</span>
+        <h2 class="section-title">Treks & Expeditions</h2>
+        <p class="section-desc">Explore the majestic Himalayas with our carefully curated trekking experiences</p>
+      </div>
+
+      <!-- CARD SLIDER -->
+      <div class="cs__wrapper">
+        <div class="cs__viewport">
+          <div class="cs__track" id="cs-track">
+
+            <!-- Chanderkhani Pass Trek -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image2.jpg')">
+                <span class="trip-detail-card__badge">EASY</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Chanderkhani Pass Trek</h3>
+                <p class="trip-detail-card__desc">A beautiful journey from Naggar to Malana, crossing scenic Chanderkhani Pass with stunning valley views.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">3D/2N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">3,440 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Easy</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹6,500</span>
+                  </div>
+                  <a href="chanderkhani.html" class="btn btn--primary">View Trek →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ghepan Lake Trek -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image3.jpeg')">
+                <span class="trip-detail-card__badge">EASY</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Ghepan Lake Trek</h3>
+                <p class="trip-detail-card__desc">Discover the pristine Ghepan Lake, a hidden gem in Lahaul Valley surrounded by stunning peaks.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">3D/2N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">4,149 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Easy</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹7,500</span>
+                  </div>
+                  <a href="ghepan-lake.html" class="btn btn--primary">View Trek →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Miyar Valley Trek -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image4.jpeg')">
+                <span class="trip-detail-card__badge">MODERATE</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Miyar Valley Trek</h3>
+                <p class="trip-detail-card__desc">Explore one of Himachal's most remote and pristine valleys with dramatic mountain scenery.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">7D/6N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">3,990 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Moderate</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹15,500</span>
+                  </div>
+                  <a href="miyar-valley.html" class="btn btn--primary">View Trek →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Parang La Trek -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image5.jpeg')">
+                <span class="trip-detail-card__badge">HARD</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Parang La Trek</h3>
+                <p class="trip-detail-card__desc">Cross the challenging Parang La pass at 5,600m connecting Spiti Valley to Ladakh.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">11D/10N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">5,600 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Hard</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹25,000</span>
+                  </div>
+                  <a href="parang-la.html" class="btn btn--primary">View Trek →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Bara Bhangal Trek -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image6.jpeg')">
+                <span class="trip-detail-card__badge">HARD</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Bara Bhangal Trek</h3>
+                <p class="trip-detail-card__desc">Cross two high passes to reach one of India's most isolated villages on this 12-day odyssey.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D/11N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">4,878 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Hard</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹18,500</span>
+                  </div>
+                  <a href="bara-bhangal.html" class="btn btn--primary">View Trek →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Mt. Manirang Expedition -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+                <span class="trip-detail-card__badge">EXPEDITION</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Mt. Manirang Expedition</h3>
+                <p class="trip-detail-card__desc">Summit the majestic Mt. Manirang at 6,593m on this challenging 19-day expedition.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">19D/18N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,593 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Hard</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹45,000</span>
+                  </div>
+                  <a href="mt-manirang.html" class="btn btn--primary">View Expedition →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Mt. Yunam Peak Expedition -->
+            <article class="cs__card trip-detail-card">
+              <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+                <span class="trip-detail-card__badge">EXPEDITION</span>
+              </div>
+              <div class="trip-detail-card__body">
+                <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+                <h3 class="trip-detail-card__title">Mt. Yunam Peak Expedition</h3>
+                <p class="trip-detail-card__desc">Conquer Mt. Yunam at 6,111m — a 7-day high-altitude expedition near Baralacha Pass ideal for advancing climbers.</p>
+                <div class="trip-detail-card__stats">
+                  <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">7D/6N</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,111 m</span></div>
+                  <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Advance</span></div>
+                </div>
+                <div class="trip-detail-card__footer">
+                  <div class="trip-detail-card__price">
+                    <span class="trip-detail-card__price-label">Starting from</span>
+                    <span class="trip-detail-card__price-val">₹32,000</span>
+                  </div>
+                  <a href="mt-yunam.html" class="btn btn--primary">View Expedition →</a>
+                </div>
+              </div>
+            </article>
+            <!--Hanuman tibba-->
+            <article class="cs__card trip-detail-card">
+  <div class="trip-detail-card__img" style="background-image:url('image2.jpg')">
+    <span class="trip-detail-card__badge">ADVANCE</span>
+  </div>
+  <div class="trip-detail-card__body">
+    <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+    <h3 class="trip-detail-card__title">Hanuman Tibba Expedition</h3>
+    <p class="trip-detail-card__desc">A thrilling high-altitude expedition to the stunning 5,982 m Mt. Hanuman Tibba, featuring glaciers, technical climbing and breathtaking Himalayan views.</p>
+    <div class="trip-detail-card__stats">
+      <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D/11N</span></div>
+      <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">5,982 m</span></div>
+      <div class="trip-stat"><span class="trip-stat__label">Difficulty</span><span class="trip-stat__val">Advance</span></div>
+    </div>
+    <div class="trip-detail-card__footer">
+      <div class="trip-detail-card__price">
+        <span class="trip-detail-card__price-label">Starting from</span>
+        <span class="trip-detail-card__price-val">Price on Request</span>
+      </div>
+      <a href="HanumanTibbaExpedition.html" class="btn btn--primary">View Expedition →</a>
+    </div>
+  </div>
+</article>
+
+          </div><!-- /.cs__track -->
+        </div><!-- /.cs__viewport -->
+
+        <!-- Prev / Next arrows -->
+        <button class="cs__arrow cs__arrow--prev" id="cs-prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="cs__arrow cs__arrow--next" id="cs-next" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="cs__dots" id="cs-dots"></div>
+        <!-- Progress bar -->
+        <div class="cs__progress"><div class="cs__progress-fill" id="cs-progress-fill"></div></div>
+      </div><!-- /.cs__wrapper -->
+
+      <div style="text-align:center;margin-top:48px">
+        <a href="trekking.html" class="btn btn--ghost">View All Treks →</a>
+      </div>
+    </div>
+  </section>
+        
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <div class="about__img-wrap">
+          <div class="about__img" style="background-image:url('image11.jpg')"></div>
+          <div class="about__badge">
+            <span class="about__badge-num">8</span>
+            <span class="about__badge-text">Years of<br>Expeditions</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="section-eyebrow">Who We Are</span>
+        <h2 class="section-title">Built by Explorers,<br>For Explorers</h2>
+        <p>Fradpaix brings you authentic Himalayan experiences with a focus on safety, sustainability, and genuine connection with the mountains. Based in the heart of Himachal Pradesh, we specialize in the challenging Bara Bhangal Trek.</p>
+        <p>We build every expedition with care: small groups, certified trek leaders, and complete support. Whether it's your first high-altitude trek or you're an experienced trekker, we're here to guide you through one of India's most spectacular mountain journeys.</p>
+        <ul class="about__pillars">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Small Group Sizes</strong><p>Max 8 per expedition for a genuine backcountry feel.</p></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Safety First</strong><p>Wilderness First Responder certified guides on every trip.</p></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><strong>Leave No Trace</strong><p>We operate under strict LNT ethics and offset all carbon.</p></div>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--primary">Reach Out to Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">In the Field</span>
+        <h2 class="section-title">Life on the Trail</h2>
+      </div>
+    </div>
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--1" style="background-image:url('image1.jpg')"></div>
+      <div class="gallery__item gallery__item--2" style="background-image:url('image2.jpg')"></div>
+      <div class="gallery__item gallery__item--3" style="background-image:url('image3.jpeg')"></div>
+      <div class="gallery__item gallery__item--4" style="background-image:url('image4.jpeg')"></div>
+      <div class="gallery__item gallery__item--5" style="background-image:url('image5.jpeg')"></div>
+      <div class="gallery__item gallery__item--6" style="background-image:url('image7.jpg')"></div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="journal section" id="journal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Trail Notes</span>
+        <h2 class="section-title">From the Field Journal</h2>
+      </div>
+      <div class="journal__grid">
+        <article class="journal-card">
+          <div class="journal-card__img" style="background-image:url('image8.HEIC');background-size:cover;background-position:center;height:200px"></div>
+          <div class="journal-card__body">
+            <span class="journal-card__date">March 14, 2026</span>
+            <h3>Five Things Nobody Tells You About the O-Circuit</h3>
+            <p>The crowds thin out fast once you pass Grey Glacier. Here's what to actually expect on Patagonia's most famous long route.</p>
+            <a href="#" class="link-arrow">Read More →</a>
+          </div>
+        </article>
+        <article class="journal-card">
+          <div class="journal-card__img" style="background-image:url('image9.HEIC');background-size:cover;background-position:center;height:200px"></div>
+          <div class="journal-card__body">
+            <span class="journal-card__date">January 29, 2026</span>
+            <h3>Gear Review: What Survived 60 Days in the Himalayas</h3>
+            <p>We put 14 brands through a brutal test across elevation, moisture, and temperature extremes. Here's what made the cut.</p>
+            <a href="#" class="link-arrow">Read More →</a>
+          </div>
+        </article>
+        <article class="journal-card">
+          <div class="journal-card__img" style="background-image:url('image10.jpeg');background-size:cover;background-position:center;height:200px"></div>
+          <div class="journal-card__body">
+            <span class="journal-card__date">November 5, 2025</span>
+            <h3>Why the Atlas Mountains Should Be on Every List</h3>
+            <p>North Africa's highest range is wildly underrated. A firsthand account of the Berber villages and summit views that changed us.</p>
+            <a href="#" class="link-arrow">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Guest Words</span>
+        <h2 class="section-title">Stories from the Trail</h2>
+      </div>
+      <div class="testimonials__grid">
+        <blockquote class="testi-card">
+          <p>"The Bara Bhangal trek with Fradpaix was life-changing. The guides knew every trail, every challenge, and kept us safe through the toughest passes."</p>
+          <footer><strong>— Priya S.</strong> Bara Bhangal Trek, 2025</footer>
+        </blockquote>
+        <blockquote class="testi-card testi-card--featured">
+          <p>"I've trekked in the Himalayas before, but Fradpaix's attention to detail and local knowledge made this the best experience. The Bara Bhangal route is incredible — and they made it possible."</p>
+          <footer><strong>— Rajesh M.</strong> Bara Bhangal Trek, 2026</footer>
+        </blockquote>
+        <blockquote class="testi-card">
+          <p>"As a solo female trekker, I felt completely safe and supported. The team was professional, the equipment was top-notch, and the experience was unforgettable."</p>
+          <footer><strong>— Anjali K.</strong> Bara Bhangal Trek, 2026</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- ENQUIRY STRIP -->
+  <section class="enquiry-strip">
+    <div class="container enquiry-strip__inner">
+      <div>
+        <h2 class="enquiry-strip__heading">Have a Question?<br><span>Let's Plan Together.</span></h2>
+        <p class="enquiry-strip__sub">Drop us a quick message and our guides will get back to you within 24 hours. No pressure, just honest conversation.</p>
+        <div class="enquiry-strip__contacts">
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
+            +91-8580475396 / +91-9211737850
+          </div>
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            fradpaix@gmail.com
+          </div>
+        </div>
+      </div>
+      <form class="enq-form" novalidate>
+        <div class="enq-form__grid">
+          <div class="enq-form__group">
+            <label for="enq-name">Name *</label>
+            <input type="text" id="enq-name" name="enq-name" placeholder="Your name" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="enq-phone" name="enq-phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-email">Email</label>
+            <input type="email" id="enq-email" name="enq-email" placeholder="you@example.com">
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-location">Location</label>
+            <input type="text" id="enq-location" name="enq-location" placeholder="City, Country">
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-trip">Trip of Interest</label>
+            <select id="enq-trip" name="enq-trip">
+              <option value="">— Select a trek / expedition —</option>
+              <option>Chanderkhani Pass Trek (3,440m)</option>
+              <option>Ghepan Lake Trek (4,149m)</option>
+              <option>Miyar Valley Trek (3,990m)</option>
+              <option>Bara Bhangal Trek (4,878m)</option>
+              <option>Parang La Trek (5,600m)</option>
+              <option>Mt. Manirang Expedition (6,593m)</option>
+              <option>Mt. Yunam Peak Expedition (6,111m)</option>
+              <option>Hanuman Tibba Expedition (5,982m)</option>
+              <option>Mt. CB 13 Expedition (6,264m)</option>
+              <option>Mt. CB 14 Expedition (6,078m)</option>
+              <option>Shinkun West Expedition (6,127m)</option>
+              <option>Shinkun South Expedition (6,127m)</option>
+              <option>Deo Tibba Expedition (6,001m)</option>
+              <option>Friendship Peak Expedition (5,289m)</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-message">Message</label>
+            <textarea id="enq-message" name="enq-message" placeholder="Tell us about your plans, dates, group size..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="enq-form__submit">Send Enquiry via WhatsApp</button>
+        <div class="enq-form__success">Your enquiry has been sent! We will reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="logo.png" alt="Fradpaix" class="footer__logo-img" />
+        </a>
+        <p>Small groups. Wild places.<br>Real adventures.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/918580475396" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Adventures</h4>
+        <ul>
+          <li><a href="trekking.html">Trekking</a></li>
+          <li><a href="expedition.html">Expeditions</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li>fradpaix@gmail.com</li>
+          <li>+91 8580475396</li>
+          <li>+91 9211737850</li>
+          <li>Manali, Himachal Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Fradpaix Expeditions. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918580475396" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+  </a>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" type="button">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m0 0L6 11m6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image" hidden>
+    <button class="gallery-lightbox__close" type="button" aria-label="Close image">×</button>
+    <img class="gallery-lightbox__image" alt="Fradpaix expedition gallery image" />
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

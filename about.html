@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Fradpaix</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Fradpaix Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">FRADPAIX</span>
+      </a>
+     <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="trekking.html" class="nav__drop-toggle">Trekking <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIMALAYAN TREKS</div>
+              <div class="nav__submenu-desc">Explore the majestic Himalayas</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="chanderkhani.html">Chanderkhani Pass Trek <span class="nav__submenu-altitude">3,440 m</span></a></li>
+              <li><a href="ghepan-lake.html">Ghepan Lake Trek <span class="nav__submenu-altitude">4,149 m</span></a></li>
+              <li><a href="miyar-valley.html">Miyar Valley Trek <span class="nav__submenu-altitude">3,990 m</span></a></li>
+              <li><a href="bara-bhangal.html">Bara Bhangal Trek <span class="nav__submenu-altitude">4,878 m</span></a></li>
+              <li><a href="parang-la.html">Parang La Trek <span class="nav__submenu-altitude">5,600 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <ul class="nav__links" id="nav-links">
+        <li class="nav__dropdown">
+          <a href="expedition.html" class="nav__drop-toggle">Expedition <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIGH ALTITUDE EXPEDITIONS</div>
+              <div class="nav__submenu-desc">Challenge yourself at extreme altitudes</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="mt-manirang.html">Mt. Manirang Expedition <span class="nav__submenu-altitude">6,593 m</span></a></li>
+              <li><a href="mt-yunam.html">Mt. Yunam Peak Expedition <span class="nav__submenu-altitude">6,111 m</span></a></li>
+              <li><a href="HanumanTibbaExpedition.html">Hanuman Tibba Expedition <span class="nav__submenu-altitude">5,982 m</span></a></li>
+              <li><a href="cb13-expedition.html">Mt. CB 13 Expedition <span class="nav__submenu-altitude">6,264 m</span></a></li>
+              <li><a href="cb14-expedition.html">Mt. CB 14 Expedition <span class="nav__submenu-altitude">6,078 m</span></a></li>
+              <li><a href="shinkun-west.html">Shinkun West Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="shinkun-south.html">Shinkun South Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="deo-tibba.html">Deo Tibba Expedition <span class="nav__submenu-altitude">6,001 m</span></a></li>
+              <li><a href="friendship-peak.html">Friendship Peak Expedition <span class="nav__submenu-altitude">5,289 m</span></a></li>
+              <li><a href="Kangyatse1.html">Kang Yatse I Expedition <span class="nav__submenu-altitude">6,401 m</span></a></li>
+              <li><a href="Kangyatse2.html">Kang Yatse II Expedition <span class="nav__submenu-altitude">6,250 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Courses <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Resources <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html" class="nav__cta">Book Now</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('image2.jpg')"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+      <span class="page-hero__eyebrow">Our Story · Our People</span>
+      <h1 class="page-hero__title">Built by Explorers,<br>For Explorers</h1>
+      <p class="page-hero__sub">Fradpaix was born on a rain-soaked ridge in Patagonia. Eight years later, we're still guided by the same conviction: wild places deserve more than box-checked itineraries.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <div class="about__img-wrap">
+          <div class="about__img" style="background-image:url('image11.jpg');background-size:cover;background-position:center"></div>
+          <div class="about__badge">
+            <span class="about__badge-num">8</span>
+            <span class="about__badge-text">Years of<br>Expeditions</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="section-eyebrow">The Origin Story</span>
+        <h2 class="section-title">How Fradpaix Began</h2>
+        <p style="color:var(--clr-muted);margin-bottom:16px">It was 2018. Two mountain guides — Marco and Lena — were pinned down in a storm at the base of the Towers, waiting out three days of Patagonian wind. The kind of storm that strips everything back. In that tent they made a decision: build a guide company that actually meant something.</p>
+        <p style="color:var(--clr-muted);margin-bottom:16px">No mass tourism. No motorcoach itineraries. No more than eight people in the field at once. Just small teams, exceptional guides, and the honest belief that the most transformative experiences happen when you're slightly uncomfortable, deeply present, and surrounded by people who care.</p>
+        <p style="color:var(--clr-muted);margin-bottom:36px">Today, Fradpaix runs expeditions across 18 countries on 5 continents. The founding principles haven't changed by a single word.</p>
+        <div class="hero__stats" style="margin-bottom:0">
+          <div class="hero__stat"><span class="hero__stat-num">240+</span><span class="hero__stat-label">Expeditions</span></div>
+          <div class="hero__stat"><span class="hero__stat-num">18</span><span class="hero__stat-label">Countries</span></div>
+          <div class="hero__stat"><span class="hero__stat-num">1,800+</span><span class="hero__stat-label">Guests</span></div>
+          <div class="hero__stat"><span class="hero__stat-num">98%</span><span class="hero__stat-label">Would Return</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" style="background:var(--clr-surface)">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">What Drives Us</span>
+        <h2 class="section-title">Our Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-card__num">01</div><h3>Small is Everything</h3><p>Eight people maximum per expedition. This isn't a constraint — it's the whole point. Smaller groups mean better decisions, safer terrain choices, deeper connection with place and people.</p></div>
+        <div class="value-card"><div class="value-card__num">02</div><h3>Safety Without Compromise</h3><p>Every Fradpaix guide carries WFR certification as a minimum. We carry emergency oxygen on all high-altitude trips, run daily safety briefings, and have a clear rescue protocol for every route we operate.</p></div>
+        <div class="value-card"><div class="value-card__num">03</div><h3>Local Knowledge First</h3><p>We don't parachute foreign guides into unfamiliar terrain. Every expedition is run with local partners who know the mountain intimately — the politics, the weather patterns, the language, the shortcuts.</p></div>
+        <div class="value-card"><div class="value-card__num">04</div><h3>Leave No Trace</h3><p>We operate under strict LNT principles. All human waste is packed out on remote routes. We offset 120% of all expedition carbon. We contribute 1% of revenue to conservation projects in each region we operate.</p></div>
+        <div class="value-card"><div class="value-card__num">05</div><h3>Radical Honesty</h3><p>If a route is too difficult for your current fitness level, we'll tell you. If weather makes a summit bid unsafe, we descend. We'd rather disappoint you once than put you at risk — and we've never lost that principle.</p></div>
+        <div class="value-card"><div class="value-card__num">06</div><h3>Genuine Connection</h3><p>The best part of every expedition isn't the summit. It's the dinner conversation at basecamp on day five, the shared exhaustion, the moment someone says "I didn't know I could do that." We build space for that.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">The People</span>
+        <h2 class="section-title">Meet the Guides</h2>
+        <p class="section-desc" style="margin:0 auto">Every Fradpaix guide is a passionate, certified professional who lives and breathes the mountains they lead you through.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card__img" style=></div>
+          <div class="team-card__body">
+            <div class="team-card__name"></div>
+            <div class="team-card__role"></div>
+            <p class="team-card__bio">.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section" style="background:var(--clr-surface)">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Guest Words</span>
+        <h2 class="section-title">Stories from the Trail</h2>
+      </div>
+      <div class="testimonials__grid">
+        <blockquote class="testi-card"><p>"Fradpaix didn't just show  — they gave us a relationship with it. Every decision, every camp spot felt intentional."</p><footer><strong>— Maya T.</strong> , 2025</footer></blockquote>
+        <blockquote class="testi-card testi-card--featured"><p>"I've done guided trips on four continents. Nothing has come close to the depth of experience Fradpaix brings. The guides, the logistics, the ethos — on another level."</p><footer><strong>.</strong> , 2024–25</footer></blockquote>
+        <blockquote class="testi-card"><p>"As a solo traveller I was nervous, but within the first hour I felt completely part of the crew. , 2026</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="highlight-strip">
+    <div class="container highlight-strip__inner">
+      <div class="highlight-strip__text">
+        <h2>Ready to Join the Fradpaix Family?</h2>
+        <p>Every expedition starts with a conversation. Let's find the right mountain for you.</p>
+      </div>
+      <a href="contact.html" class="btn btn--dark">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- ENQUIRY STRIP -->
+  <section class="enquiry-strip">
+    <div class="container enquiry-strip__inner">
+      <div>
+        <h2 class="enquiry-strip__heading">Have a Question?<br><span>Let's Plan Together.</span></h2>
+        <p class="enquiry-strip__sub">Drop us a quick message and our guides will get back to you within 24 hours. No pressure, just honest conversation.</p>
+        <div class="enquiry-strip__contacts">
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
+            +91-8580475396 / +91-9211737850
+          </div>
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            fradpaix@gmail.com
+          </div>
+        </div>
+      </div>
+      <form class="enq-form" novalidate>
+        <div class="enq-form__grid">
+          <div class="enq-form__group">
+            <label for="enq-name">Name *</label>
+            <input type="text" id="enq-name" name="enq-name" placeholder="Your name" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="enq-phone" name="enq-phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-email">Email</label>
+            <input type="email" id="enq-email" name="enq-email" placeholder="you@example.com">
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-location">Location</label>
+            <input type="text" id="enq-location" name="enq-location" placeholder="City, Country">
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-trip">Trip of Interest</label>
+            <select id="enq-trip" name="enq-trip">
+              <option value="">— Select a trek / expedition —</option>
+              <option>Chanderkhani Pass Trek (3,440m)</option>
+              <option>Ghepan Lake Trek (4,149m)</option>
+              <option>Miyar Valley Trek (3,990m)</option>
+              <option>Bara Bhangal Trek (4,878m)</option>
+              <option>Parang La Trek (5,600m)</option>
+              <option>Mt. Manirang Expedition (6,593m)</option>
+              <option>Mt. Yunam Peak Expedition (6,111m)</option>
+              <option>Hanuman Tibba Expedition (5,982m)</option>
+              <option>Mt. CB 13 Expedition (6,264m)</option>
+              <option>Mt. CB 14 Expedition (6,078m)</option>
+              <option>Shinkun West Expedition (6,127m)</option>
+              <option>Shinkun South Expedition (6,127m)</option>
+              <option>Deo Tibba Expedition (6,001m)</option>
+              <option>Friendship Peak Expedition (5,289m)</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-message">Message</label>
+            <textarea id="enq-message" name="enq-message" placeholder="Tell us about your plans, dates, group size..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="enq-form__submit">Send Enquiry via WhatsApp</button>
+        <div class="enq-form__success">Your enquiry has been sent! We will reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="logo.png" alt="Fradpaix" class="footer__logo-img" />
+        </a>
+        <p>Small groups. Wild places.<br>Real adventures.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/918580475396" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Adventures</h4>
+        <ul>
+          <li><a href="trekking.html">Trekking</a></li>
+          <li><a href="expedition.html">Expeditions</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li>fradpaix@gmail.com</li>
+          <li>+91 8580475396</li>
+          <li>+91 9211737850</li>
+          <li>Manali, Himachal Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Fradpaix Expeditions. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918580475396" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+  </a>
+  <script src="script.js"></script>
+</body>
+</html>

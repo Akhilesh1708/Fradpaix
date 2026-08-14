@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kang Yatse 2 Expedition — Fradpaix</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="trek.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Fradpaix Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">FRADPAIX</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="trekking.html" class="nav__drop-toggle">Trekking <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIMALAYAN TREKS</div>
+              <div class="nav__submenu-desc">Explore the majestic Himalayas</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="chanderkhani.html">Chanderkhani Pass Trek <span class="nav__submenu-altitude">3,440 m</span></a></li>
+              <li><a href="ghepan-lake.html">Ghepan Lake Trek <span class="nav__submenu-altitude">4,149 m</span></a></li>
+              <li><a href="miyar-valley.html">Miyar Valley Trek <span class="nav__submenu-altitude">3,990 m</span></a></li>
+              <li><a href="bara-bhangal.html">Bara Bhangal Trek <span class="nav__submenu-altitude">4,878 m</span></a></li>
+              <li><a href="parang-la.html">Parang La Trek <span class="nav__submenu-altitude">5,600 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <ul class="nav__links" id="nav-links">
+        <li class="nav__dropdown">
+          <a href="expedition.html" class="nav__drop-toggle">Expedition <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIGH ALTITUDE EXPEDITIONS</div>
+              <div class="nav__submenu-desc">Challenge yourself at extreme altitudes</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="mt-manirang.html">Mt. Manirang Expedition <span class="nav__submenu-altitude">6,593 m</span></a></li>
+              <li><a href="mt-yunam.html">Mt. Yunam Peak Expedition <span class="nav__submenu-altitude">6,111 m</span></a></li>
+              <li><a href="HanumanTibbaExpedition.html">Hanuman Tibba Expedition <span class="nav__submenu-altitude">5,982 m</span></a></li>
+              <li><a href="cb13-expedition.html">Mt. CB 13 Expedition <span class="nav__submenu-altitude">6,264 m</span></a></li>
+              <li><a href="cb14-expedition.html">Mt. CB 14 Expedition <span class="nav__submenu-altitude">6,078 m</span></a></li>
+              <li><a href="shinkun-west.html">Shinkun West Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="shinkun-south.html">Shinkun South Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="deo-tibba.html">Deo Tibba Expedition <span class="nav__submenu-altitude">6,001 m</span></a></li>
+              <li><a href="friendship-peak.html">Friendship Peak Expedition <span class="nav__submenu-altitude">5,289 m</span></a></li> 
+              <li><a href="Kangyatse2.html">Kang Yatse II Expedition<span class="nav__submenu-altitude">6,250m </span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Courses <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Resources <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html" class="nav__cta">Book Now</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero page-hero--tall">
+    <div class="page-hero__bg" style="background-image:url('image7.jpg')"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Expeditions</span><span>/</span><span>Kang Yatse II</span></div>
+      <span class="page-hero__eyebrow">Leh · Ladakh · India</span>
+      <h1 class="page-hero__title">Kang Yatse II Expedition</h1>
+      <p class="page-hero__sub">Summit the majestic Kang Yatse II at 6,250m — a 7-day mountaineering expedition offering spectacular views and technical challenges for experienced climbers.</p>
+      <div class="trek-hero-badges">
+        <span class="trek-badge">Manali</span>
+        <span class="trek-badge">6,250 m</span>
+        <span class="trek-badge">12D / 11N</span>
+        <span class="trek-badge trek-badge--hard">HARD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK STATS BAR -->
+  <div class="trek-stats-bar">
+    <div class="container trek-stats-bar__inner">
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Location</span><span class="trek-qstat__val">Ladakh</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Summit Altitude</span><span class="trek-qstat__val">6,250 m</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Duration</span><span class="trek-qstat__val">12 Days / 11 Nights</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Difficulty</span><span class="trek-qstat__val" style="color:var(--clr-accent)">HARD</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Temperature</span><span class="trek-qstat__val">-15°C – 10°C</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Best Season</span><span class="trek-qstat__val">Season as per expedition schedule</span></div>
+    </div>
+  </div>
+
+  <!-- TAB NAVIGATION -->
+  <nav class="trek-tabs">
+    <div class="container trek-tabs__inner">
+      <a href="#overview" class="trek-tab active" data-panel="overview">Overview</a>
+      <a href="#itinerary" class="trek-tab" data-panel="itinerary">Itinerary</a>
+      <a href="#gear" class="trek-tab" data-panel="gear">Gear</a>
+      <a href="#includes" class="trek-tab" data-panel="includes">Includes</a>
+      <a href="#excludes" class="trek-tab" data-panel="excludes">Excludes</a>
+      <a href="#terms" class="trek-tab" data-panel="terms">Terms</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <div class="trek-body container">
+    <main>
+
+      <!-- OVERVIEW PANEL -->
+      <div class="trek-panel active" data-panel="overview">
+        <div class="trek-overview-grid">
+          <div class="trek-info-card"><span class="trek-info-card__label">REGION</span><span class="trek-info-card__value">Ladakh</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">DURATION</span><span class="trek-info-card__value">12 Days / 11 Nights</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">SUMMIT ALTITUDE</span><span class="trek-info-card__value">6,250 meters (20,049 ft)</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">DIFFICULTY</span><span class="trek-info-card__value" style="color:var(--clr-accent)">HARD</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">BEST SEASON</span><span class="trek-info-card__value">Season as per expedition schedule</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">TEMPERATURE</span><span class="trek-info-card__value">-15°C to 10°C</span></div>
+        </div>
+
+        <h2 class="trek-section-title">About the Expedition</h2>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">Kang Yatse II is a magnificent 6,250-meter peak located in Himachal Pradesh near Baralacha Pass in Lahaul Valley. This mountain offers beginner mountaineers an excellent introduction to high-altitude climbing through its non-technical approach and relatively straightforward summit route. The expedition typically begins from Manali and involves a systematic acclimatization process as teams move from base camp through multiple high camps before the final summit push.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">The climb involves snow slopes, glacier travel, and basic mountaineering techniques including rope work, crampon use, and ice axe skills. From the summit, climbers are rewarded with breathtaking 360-degree views of the surrounding Himalayan giants including CB 13 (6,264m), CB 14 (6,070m), and the distant peaks of Zanskar and Ladakh ranges.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">The best time to attempt Kang Yatse II is during the pre-monsoon season (May-June) and post-monsoon season (September-October) when weather conditions are most stable. The expedition requires participants to have good physical fitness, basic mountaineering knowledge, and the ability to cope with high-altitude conditions.</p>
+        
+        <h3 class="trek-section-title" style="font-size:1.3rem;margin-top:32px">Why Choose Fradpaix for Kang Yatse II?</h3>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">Fradpaix Adventures has been leading expeditions to Kang Yatse II for years with an exceptional safety record. Our experienced climbing Sherpas and certified mountaineering guides ensure proper acclimatization protocols, technical training, and risk management throughout the journey. We provide all necessary high-altitude equipment, establish well-stocked camps, and maintain constant communication with base camp.</p>
+        
+        <div class="trek-highlight-box">
+          <span></span>
+          <div>
+            <strong>Ready With Frady!</strong>
+            <p>Join Fradpaix for your first Himalayan summit attempt. Our expert team will guide you safely through every step, from basic mountaineering skills to standing on top of Kang Yatse II at 6,250 meters.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITINERARY PANEL -->
+      <div class="trek-panel" data-panel="itinerary">
+        <h2 class="trek-section-title">12-Day Detailed Itinerary</h2>
+        <div class="trek-accordion">
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 01</span><div class="trek-acc-info"><h3 class="trek-acc-title">Arrive in Leh</h3><div class="trek-acc-meta"><span>Elevation: 3,500 m</span><span>Arrival Day</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>The Kang Yatse II expedition commences from Leh. A Fradpaix Adventures representative will place you in the pre-booked hotel. Explore Leh at your convenience and spend the night at the hotel.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 02</span><div class="trek-acc-info"><h3 class="trek-acc-title">Full Day Rest and Acclimatization</h3><div class="trek-acc-meta"><span>Leh · 3,500 m</span><span>Acclimatization Day</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Rest and acclimatize after gaining significant altitude. Experience local cuisine and culture, complete last-minute errands and attend the Kang Yatse II expedition briefing.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 03</span><div class="trek-acc-info"><h3 class="trek-acc-title">Leh to Skiu</h3><div class="trek-acc-meta"><span>3,500 m</span><span>Drive + Trek · 40 km</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>After breakfast and check-out, drive from Leh to Skiu. Settle into the campsite, have lunch, rest and take an acclimatization walk with the trek leaders.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 04</span><div class="trek-acc-info"><h3 class="trek-acc-title">Skiu to Markha Village</h3><div class="trek-acc-meta"><span>3,710 m</span><span>8 hrs · 19 km</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Start early towards Markha Village through dry Ladakhi terrain, rocky peaks, poplar trees and muddy trails. Cross a wooden bridge over a stream and continue to the campsite.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 05</span><div class="trek-acc-info"><h3 class="trek-acc-title">Markha Village to Lower Hunkar</h3><div class="trek-acc-meta"><span>3,968 m</span><span>6 hrs · 10 km</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Trek comparatively easy terrain with long even stretches. Cross a river, reach Tacha Gompa and continue to Lower Hunkar campsite with stunning mountain views.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 06</span><div class="trek-acc-info"><h3 class="trek-acc-title">Lower Hunkar to Nimaling</h3><div class="trek-acc-meta"><span>4,535 m</span><span>7 hrs · 11 km</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Climb through Upper Hunkar, fields, villages, Mani stones and river crossings. Continue towards Twin Lake and Nimaling, with acclimatization walks after the elevation gain.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 07</span><div class="trek-acc-info"><h3 class="trek-acc-title">Nimaling to Kang Yatse Base Camp</h3><div class="trek-acc-meta"><span>5,100 m</span><span>4 hrs · 5 km</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Head towards Base Camp after breakfast, climbing through moraine and glacial terrain. Stay overnight at Kang Yatse Base Camp.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 08</span><div class="trek-acc-info"><h3 class="trek-acc-title">Acclimatization & Training Day</h3><div class="trek-acc-meta"><span>Base Camp</span><span>Training Day</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>A dedicated acclimatization day. The trek leader trains participants in the use of crampons, ice axes and snow boots, and in ascending and descending while roped up.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 09</span><div class="trek-acc-info"><h3 class="trek-acc-title">Summit Attempt — Kang Yatse II</h3><div class="trek-acc-meta"><span>6,250 m</span><span>11–12 hrs</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Start around midnight for the summit push. Cross scree, moraine and glacier terrain, rope up through the glacier and continue to the summit. Enjoy panoramic views of the Zanskar Range, Karakoram Peaks and surrounding mountains before returning to Base Camp.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 10</span><div class="trek-acc-info"><h3 class="trek-acc-title">Reserve Day for Summit</h3><div class="trek-acc-meta"><span>High Altitude</span><span>Reserve Day</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>This day is reserved as a safety net if unforeseen situations arise or weather conditions prevent the summit attempt on Day 9.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 11</span><div class="trek-acc-info"><h3 class="trek-acc-title">Base Camp to Leh via Kongmaru La</h3><div class="trek-acc-meta"><span>5,236 m pass</span><span>Full-day trek + drive</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Leave Base Camp and trek towards Leh via Kongmaru La Pass. Continue through varied landscapes to Chokdo, then drive to Leh and stay overnight at the hotel.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+          <div class="trek-acc-item"><button class="trek-acc-btn"><span class="trek-acc-day">DAY 12</span><div class="trek-acc-info"><h3 class="trek-acc-title">Departure from Leh</h3><div class="trek-acc-meta"><span>Leh</span><span>Departure Day</span></div></div><div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></button><div class="trek-acc-body"><div class="trek-acc-content"><p>Check out of the hotel and say farewell to the Fradpaix Adventures team. The team will drop you at Leh airport. Meal: Breakfast.</p><div class="trek-acc-tip">Overnight as per itinerary. Meal: Breakfast + Lunch + Dinner</div></div></div></div>
+        </div><!-- end .trek-accordion -->
+      </div><!-- end itinerary panel -->
+
+      <!-- GEAR PANEL -->
+      <div class="trek-panel" data-panel="gear">
+        <h2 class="trek-section-title">Things to Carry</h2>
+        <div class="trek-gear-grid">
+          <div class="trek-gear-box">
+            <h4>Climbing &amp; Technical Gear</h4>
+            <ul class="trek-list">
+              <li>ID Card (Passport, visa, voter ID)</li>
+              <li>Down sleeping bag (rated to -20°C)</li>
+              <li>Down mattress (inflatable)</li>
+              <li>Waterproof stuff sack</li>
+              <li>Rucksack and duffle bag</li>
+              <li>Headlamp with extra batteries</li>
+              <li>Pocket Swiss knife</li>
+              <li>Trekking poles (adjustable)</li>
+              <li>Ice axe (provided by Fradpaix)</li>
+              <li>Crampons — 12-point (provided by Fradpaix)</li>
+              <li>Climbing harness &amp; helmet (provided by Fradpaix)</li>
+            </ul>
+          </div>
+          <div class="trek-gear-box">
+            <h4>Clothing &amp; Personal Items</h4>
+            <ul class="trek-list">
+              <li>Down jacket or down pants</li>
+              <li>Hardshell waterproof jacket &amp; trousers</li>
+              <li>Fleece jacket and track pants</li>
+              <li>Thermal base layers (2 sets)</li>
+              <li>Warm woolen socks (4–5 pairs)</li>
+              <li>Warm gloves (liner + waterproof shell)</li>
+              <li>Balaclava / neck gaiter</li>
+              <li>Sunglasses (UV400 / glacier glasses)</li>
+              <li>Gaiters (essential for snow travel)</li>
+              <li>Water bottles — 2 x 1L + thermos</li>
+              <li>Sunscreen (SPF 50+) and lip balm</li>
+              <li>Personal first aid kit &amp; Diamox</li>
+              <li>Mountaineering boots (crampon-compatible)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="trek-highlight-box" style="margin-top:28px">
+          <span></span>
+          <div>
+            <strong>Equipment Note</strong>
+            <p>Fradpaix provides all technical climbing gear — ice axes, crampons, harnesses, helmets, jumars, and fixed ropes. You only need personal clothing and accessories. A full gear list is shared after booking.</p>
+          </div>
+        </div>
+      </div><!-- end gear panel -->
+
+      <!-- INCLUDES PANEL -->
+      <div class="trek-panel" data-panel="includes">
+        <h2 class="trek-section-title">What's Included</h2>
+        <ul class="trek-list">
+          <li>Services of certified mountaineering guide and climbing Sherpas</li>
+          <li>Accommodation in Manali on Day 1 (if applicable)</li>
+          <li>Transport from Manali to Batal and return</li>
+          <li>All meals during the expedition (Breakfast, Lunch, Dinner)</li>
+          <li>High-altitude tents and sleeping arrangements at all camps</li>
+          <li>Technical mountaineering equipment: ice axe, crampons, harness, helmet, jumar</li>
+          <li>Fixed rope installation on all technical sections</li>
+          <li>All camping equipment (tents, cooking gear, dining tent)</li>
+          <li>Oxygen cylinder and emergency medical kit at all camps</li>
+          <li>Walkie-talkie communication between camps</li>
+          <li>Rescue and evacuation arrangements (in case of emergency)</li>
+          <li>IMF (Indian Mountaineering Foundation) peak permit and royalty fee</li>
+          <li>Porter support for carrying expedition loads</li>
+          <li>Summit certificate from Fradpaix Adventures</li>
+          <li>Pre-summit mountaineering technique briefing sessions</li>
+          <li>First aid kit with portable oxygen meter</li>
+        </ul>
+      </div><!-- end includes panel -->
+
+      <!-- EXCLUDES PANEL -->
+      <div class="trek-panel" data-panel="excludes">
+        <h2 class="trek-section-title">What's Not Included</h2>
+        <ul class="trek-list trek-list--excl">
+          <li>Personal travel to and from Manali</li>
+          <li>Personal trekking and mountaineering clothing</li>
+          <li>Personal medications including altitude sickness tablets (Diamox)</li>
+          <li>Travel insurance (must cover high-altitude mountaineering)</li>
+          <li>Medical evacuation insurance</li>
+          <li>Alcoholic and aerated beverages</li>
+          <li>Tips and gratuities for guides and support staff</li>
+          <li>Any expenses due to early departure, extension, or evacuation</li>
+          <li>Personal snacks and energy bars beyond provided meals</li>
+          <li>Camera equipment, batteries, and memory cards</li>
+          <li>Any cost arising from natural calamity, bad weather, or political disruption</li>
+          <li>GST and applicable government taxes (charged additionally)</li>
+        </ul>
+
+        <div class="offload-box" style="margin-top:28px">
+          <strong>Backpack Offloading Charges</strong>
+          <p>₹7,000 — booked before 10 days of expedition date</p>
+          <p>₹8,500 — arranged after reaching Manali</p>
+          <p class="note">Max luggage: 11 kg · No suitcases or trolleys</p>
+        </div>
+      </div><!-- end excludes panel -->
+
+      <!-- TERMS PANEL -->
+      <div class="trek-panel" data-panel="terms">
+        <h2 class="trek-section-title">Cancellation Policy</h2>
+        <p style="color:var(--clr-muted);margin-bottom:24px">All cancellations must be submitted in writing via email to <a href="mailto:fradpaix@gmail.com" style="color:var(--clr-accent)">fradpaix@gmail.com</a> or through the booking method.</p>
+        <div class="cancel-table">
+          <div class="cancel-row cancel-row--header"><span>Notice Period</span><span>Refund</span><span>Cancellation Charge</span></div>
+          <div class="cancel-row"><span>More than 15 days prior</span><span class="refund-good">60%</span><span>40%</span></div>
+          <div class="cancel-row"><span>7–15 days prior</span><span class="refund-mid">50%</span><span>50%</span></div>
+          <div class="cancel-row"><span>2–7 days prior</span><span class="refund-low">30%</span><span>70%</span></div>
+          <div class="cancel-row"><span>Less than 2 days / No-show</span><span class="refund-none">0%</span><span>100%</span></div>
+        </div>
+        <p style="color:var(--clr-muted);font-size:0.85rem;margin-top:16px">Refunds, if applicable, will be processed within 7–10 business days via the original payment method.</p>
+
+        <h3 style="color:var(--clr-white);font-size:1rem;font-weight:600;margin-top:40px;margin-bottom:10px">Booking &amp; Payment</h3>
+        <ul class="trek-list" style="margin-bottom:28px">
+          <li>A 40% advance deposit is required to confirm your booking. The remaining 60% is due 15 days before the expedition start date.</li>
+          <li>Bookings are confirmed only upon receipt of the deposit and completion of the registration form.</li>
+          <li>Prices are quoted per person based on a minimum group size.</li>
+        </ul>
+
+        <h3 style="color:var(--clr-white);font-size:1rem;font-weight:600;margin-bottom:10px">Eligibility &amp; Fitness</h3>
+        <ul class="trek-list" style="margin-bottom:28px">
+          <li>Participants must be between 18–55 years of age and in good physical health.</li>
+          <li>Prior mountaineering or high-altitude trekking experience is strongly recommended.</li>
+          <li>A medical fitness certificate may be required. Participants with pre-existing heart, lung, or blood pressure conditions must consult a physician before joining.</li>
+          <li>Fradpaix reserves the right to refuse participation to anyone deemed unfit, without refund.</li>
+        </ul>
+
+        <h3 style="color:var(--clr-white);font-size:1rem;font-weight:600;margin-bottom:10px">Safety &amp; Liability</h3>
+        <ul class="trek-list">
+          <li>All participants must follow guide instructions at all times.</li>
+          <li>Mountaineering involves inherent risks including altitude sickness, rock/ice fall, and extreme weather. Participants acknowledge and accept these risks.</li>
+          <li>Participants are strongly advised to purchase personal travel and medical evacuation insurance covering high-altitude mountaineering.</li>
+          <li>Fradpaix reserves the right to alter the itinerary at any time due to weather or safety concerns. The final decision on summit attempt rests solely with the lead guide.</li>
+        </ul>
+      </div><!-- end terms panel -->
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="trek-sticky-sidebar">
+      <div class="trek-book-card">
+        <div class="trek-book-card__top">
+          <span class="trek-book-card__label">Starting from</span>
+          <span class="trek-book-card__price">Price on Request<span>/person</span></span>
+        </div>
+        <div class="trek-book-card__badges">
+          <span>Ladakh</span><span>6,250 m</span><span>12D/11N</span>
+          <span style="color:var(--clr-accent)">Hard</span>
+        </div>
+        <a href="booking.html?trek=Mt.+Yunam+Peak+Expedition+(6%2C111m)" class="btn btn--primary btn--full" style="margin-top:8px">Book This Expedition</a>
+        <a href="https://wa.me/918580475396?text=Hi%20Fradpaix%2C%20I%20am%20interested%20in%20Kang%20Yatse%202%20Expedition%20(6%2C111m)" target="_blank" rel="noopener" class="btn--wa-book">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <div class="trek-book-card__contact">
+          <a href="tel:+918580475396">+91 85804 75396</a>
+          <a href="tel:+919211737850">+91 92117 37850</a>
+          <a href="mailto:fradpaix@gmail.com">fradpaix@gmail.com</a>
+        </div>
+        <div class="trek-book-card__divider"></div>
+        <div class="trek-book-card__includes">
+          <strong>Price includes:</strong>
+          <ul>
+            <li>✓ All meals during expedition</li>
+            <li>✓ Technical climbing gear</li>
+            <li>✓ Certified mountaineering guide</li>
+            <li>✓ Climbing Sherpa support</li>
+            <li>✓ IMF peak permit &amp; royalty</li>
+            <li>✓ Emergency oxygen &amp; rescue kit</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- end .trek-body -->
+
+  <!-- FOOTER -->
+  <!-- ENQUIRY STRIP -->
+  <section class="enquiry-strip">
+    <div class="container enquiry-strip__inner">
+      <div>
+        <h2 class="enquiry-strip__heading">Have a Question?<br><span>Let's Plan Together.</span></h2>
+        <p class="enquiry-strip__sub">Drop us a quick message and our guides will get back to you within 24 hours. No pressure, just honest conversation.</p>
+        <div class="enquiry-strip__contacts">
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
+            +91-8580475396 / +91-9211737850
+          </div>
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            fradpaix@gmail.com
+          </div>
+        </div>
+      </div>
+      <form class="enq-form" novalidate>
+        <div class="enq-form__grid">
+          <div class="enq-form__group">
+            <label for="enq-name">Name *</label>
+            <input type="text" id="enq-name" name="enq-name" placeholder="Your name" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="enq-phone" name="enq-phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-email">Email</label>
+            <input type="email" id="enq-email" name="enq-email" placeholder="you@example.com">
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-location">Location</label>
+            <input type="text" id="enq-location" name="enq-location" placeholder="City, Country">
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-trip">Trip of Interest</label>
+            <select id="enq-trip" name="enq-trip">
+              <option value="">— Select a trek / expedition —</option>
+              <option>Chanderkhani Pass Trek (3,440m)</option>
+              <option>Ghepan Lake Trek (4,149m)</option>
+              <option>Miyar Valley Trek (3,990m)</option>
+              <option>Bara Bhangal Trek (4,878m)</option>
+              <option>Parang La Trek (5,600m)</option>
+              <option>Mt. Manirang Expedition (6,593m)</option>
+              <option>Kang Yatse II Expedition (6,250m)</option>
+              <option>Hanuman Tibba Expedition (5,982m)</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-message">Message</label>
+            <textarea id="enq-message" name="enq-message" placeholder="Tell us about your plans, dates, group size..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="enq-form__submit">Send Enquiry via WhatsApp</button>
+        <div class="enq-form__success">Your enquiry has been sent! We will reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link"><img src="logo.png" alt="Fradpaix" class="footer__logo-img" /></a>
+        <p>Small groups. Wild places.<br>Real adventures.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/918580475396" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb"><svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Adventures</h4><ul><li><a href="trekking.html">Trekking</a></li><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Contact</h4><ul><li>fradpaix@gmail.com</li><li>+91 8580475396</li><li>+91 9211737850</li><li>Ladakh</li></ul></div>
+    </div>
+    <div class="footer__bottom"><div class="container"><p>© 2026 Fradpaix Expeditions. All rights reserved.</p><p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p></div></div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918580475396" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+  </a>
+
+  <!-- Floating Book Now Button -->
+  <button class="book-float-btn" id="book-float-btn" aria-label="Book Now">Book Now</button>
+
+  <!-- Booking Modal -->
+  <div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal__inner">
+      <button class="booking-modal__close" id="booking-modal-close" aria-label="Close booking form">&times;</button>
+      <h2 class="booking-modal__title" id="booking-modal-title">Book Kang Yatse II Expedition</h2>
+      <p class="booking-modal__sub">Fill in your details and we'll confirm via WhatsApp within 24 hours.</p>
+      <form id="booking-form" novalidate>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-trek">Trek / Expedition <span>*</span></label>
+          <select class="booking-form__input" id="booking-trek" required>
+            <option value="">-- Select a trek --</option>
+            <option value="Chanderkhani Pass Trek (3,440m)">Chanderkhani Pass Trek (3,440m)</option>
+            <option value="Ghepan Lake Trek (4,149m)">Ghepan Lake Trek (4,149m)</option>
+            <option value="Miyar Valley Trek (3,990m)">Miyar Valley Trek (3,990m)</option>
+            <option value="Bara Bhangal Trek (4,878m)">Bara Bhangal Trek (4,878m)</option>
+            <option value="Parang La Trek (5,600m)">Parang La Trek (5,600m)</option>
+            <option value="Mt. Manirang Expedition (6,593m)">Mt. Manirang Expedition (6,593m)</option>
+            <option value="Kang Yatse II Expedition (6,250m)" selected>Kang Yatse II Expedition (6,250m)</option>
+          </select>
+        </div>
+        <div class="booking-form__price" id="booking-price-display" style="display:none">
+          <span class="booking-form__price-label">Trek Price</span>
+          <div class="booking-form__price-amount"></div>
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-name">Full Name <span>*</span></label>
+          <input class="booking-form__input" type="text" id="booking-name" placeholder="Your full name" required />
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-email">Email Address</label>
+          <input class="booking-form__input" type="email" id="booking-email" placeholder="your@email.com" />
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-phone">Phone Number <span>*</span></label>
+          <input class="booking-form__input" type="tel" id="booking-phone" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-dates">Preferred Dates</label>
+          <input class="booking-form__input" type="text" id="booking-dates" placeholder="e.g., May 10–17, 2026" />
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-people">Number of People</label>
+          <input class="booking-form__input" type="number" id="booking-people" min="1" placeholder="1" />
+        </div>
+        <div class="booking-form__group">
+          <label class="booking-form__label" for="booking-message">Special Requirements</label>
+          <textarea class="booking-form__input booking-form__textarea" id="booking-message" placeholder="Medical conditions, experience level, questions..."></textarea>
+        </div>
+        <button class="booking-form__submit" type="submit">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52z"/></svg>
+          Send Booking via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

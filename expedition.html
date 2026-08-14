@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expeditions — Fradpaix</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Fradpaix Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">FRADPAIX</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="trekking.html" class="nav__drop-toggle">Trekking <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIMALAYAN TREKS</div>
+              <div class="nav__submenu-desc">Explore the majestic Himalayas</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="chanderkhani.html">Chanderkhani Pass Trek <span class="nav__submenu-altitude">3,440 m</span></a></li>
+              <li><a href="ghepan-lake.html">Ghepan Lake Trek <span class="nav__submenu-altitude">4,149 m</span></a></li>
+              <li><a href="miyar-valley.html">Miyar Valley Trek <span class="nav__submenu-altitude">3,990 m</span></a></li>
+              <li><a href="bara-bhangal.html">Bara Bhangal Trek <span class="nav__submenu-altitude">4,878 m</span></a></li>
+              <li><a href="parang-la.html">Parang La Trek <span class="nav__submenu-altitude">5,600 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="expedition.html" class="nav__drop-toggle">Expedition <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIGH ALTITUDE EXPEDITIONS</div>
+              <div class="nav__submenu-desc">Challenge yourself at extreme altitudes</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="mt-manirang.html">Mt. Manirang Expedition <span class="nav__submenu-altitude">6,593 m</span></a></li>
+              <li><a href="mt-yunam.html">Mt. Yunam Peak Expedition <span class="nav__submenu-altitude">6,111 m</span></a></li>
+              <li><a href="HanumanTibbaExpedition.html">Hanuman Tibba Expedition <span class="nav__submenu-altitude">5,982 m</span></a></li>
+              <li><a href="cb13-expedition.html">Mt. CB 13 Expedition <span class="nav__submenu-altitude">6,264 m</span></a></li>
+              <li><a href="cb14-expedition.html">Mt. CB 14 Expedition <span class="nav__submenu-altitude">6,078 m</span></a></li>
+              <li><a href="shinkun-west.html">Shinkun West Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="shinkun-south.html">Shinkun South Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="deo-tibba.html">Deo Tibba Expedition <span class="nav__submenu-altitude">6,001 m</span></a></li>
+              <li><a href="friendship-peak.html">Friendship Peak Expedition <span class="nav__submenu-altitude">5,289 m</span></a></li>
+              <li><a href="Kangyatse1.html">Kang Yatse I Expedition <span class="nav__submenu-altitude">6,401 m</span></a></li>
+              <li><a href="Kangyatse2.html">Kang Yatse II Expedition <span class="nav__submenu-altitude">6,250 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Courses <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu"><div class="nav__submenu-empty">Coming soon</div></div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Resources <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu"><div class="nav__submenu-empty">Coming soon</div></div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html" class="nav__cta">Book Now</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('image7.jpg')"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Expeditions</span></div>
+      <span class="page-hero__eyebrow">High Altitude · Technical Peaks</span>
+      <h1 class="page-hero__title">Expeditions</h1>
+      <p class="page-hero__sub">From 6,000m Himalayan summits to technical glacier routes — every expedition is a world unto itself.</p>
+    </div>
+  </section>
+
+  <!-- EXPEDITION LISTINGS -->
+  <section class="section" id="expeditions">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Our Expeditions</span>
+        <h2 class="section-title">Choose Your Summit</h2>
+        <p class="section-desc">Seven technically demanding peaks across the Himalayas — find the expedition that matches your ambition and experience.</p>
+      </div>
+
+      <div class="trips-full-grid">
+
+        <!-- Mt. Manirang -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Mt. Manirang Expedition</h3>
+            <p class="trip-detail-card__desc">Summit one of Himachal's highest peaks at 6,593m — a 19-day mountaineering expedition demanding prior climbing experience and technical skill across the Spiti-Kinnaur border.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,593 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">19D / 18N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Hard</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Jul – Sep</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">₹45,000</span>
+              </div>
+              <a href="mt-manirang.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mt. Yunam -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Mt. Yunam Peak Expedition</h3>
+            <p class="trip-detail-card__desc">Conquer Mt. Yunam at 6,111m — a 7-day high-altitude expedition near Baralacha Pass, ideal for advancing climbers looking for their first 6,000m summit.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,111 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">7D / 6N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">May–Jun, Sep–Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">₹32,000</span>
+              </div>
+              <a href="mt-yunam.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hanuman Tibba -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image2.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Hanuman Tibba Expedition</h3>
+            <p class="trip-detail-card__desc">Summit the iconic pyramid-shaped Hanuman Tibba at 5,982m in the Pir Panjal Range — a technically thrilling 12-day expedition with glacier traverses and stunning views from the summit.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">5,982 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D / 11N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Jun – Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="HanumanTibbaExpedition.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mt. CB 13 -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Mt. CB 13 Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Chandra Bhaga 13 at 6,264m — a technically challenging peak in the Lahaul-Spiti region approached via the South Dhaka Glacier from Batal, with stunning views of the Kunzum Range.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,264 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">11D / 10N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Jun – Jul</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="cb13-expedition.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mt. CB 14 -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Mt. CB 14 Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Chandra Bhaga 14 at 6,078m — often paired with CB 13 as a technical duo, offering panoramic views of Chandratal Lake and the Dhaka Glacier on a multi-camp glacier route.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,078 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D / 11N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Jun – Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="cb14-expedition.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Shinkun West -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Shinkun West Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Shinkun West at 6,127m near Shinkun La Pass — a technically demanding peak approached from Jispa with a 70m rock band requiring fixed ropes and stunning 360° views from the summit ridge.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,127 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">9D / 8N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Sep – Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="shinkun-west.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Deo Tibba -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image11.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Deo Tibba Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Deo Tibba — "Hills of the Gods" — at 6,001m in the Pir Panjal Range above Jagatsukh village. A scenic 12-day expedition through forests, meadows, glacial lakes, and technical summit terrain.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,001 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D / 11N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">May – Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="deo-tibba.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Shinkun South -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Lahaul · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Shinkun South Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Shinkun South at 6,127m near Shinkun La Pass — a technically demanding peak approached from Jispa with challenging crevasses, 50° slopes, and a 360° panorama of the Himalayan ranges from the summit.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,127 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">9D / 8N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Sep – Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="shinkun-south.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Friendship Peak -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image2.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Manali · Himachal Pradesh</span>
+            <h3 class="trip-detail-card__title">Friendship Peak Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Friendship Peak at 5,289m in the Pir Panjal Range — a thrilling 7-day mountaineering challenge above Manali offering panoramic views of Hanuman Tibba, Deo Tibba, and the entire Dhauladhar Range.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">5,289 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">7D / 6N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Advance</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">May–Jun, Aug–Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="friendship-peak.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kang Yatse I -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Markha Valley · Ladakh</span>
+            <h3 class="trip-detail-card__title">Kang Yatse I Expedition</h3>
+            <p class="trip-detail-card__desc">Summit the highest peak of Hemis National Park at 6,401m — a 17-day technical mountaineering expedition through the dramatic Markha Valley featuring steep ice faces, exposed ridgelines, and multi-day high-altitude camping above 5,000m.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,401 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">17D / 16N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Hard</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">Jun – Sep</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="Kangyatse1.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kang Yatse II -->
+        <article class="trip-detail-card">
+          <div class="trip-detail-card__img" style="background-image:url('image7.jpg')">
+            <span class="trip-detail-card__badge">EXPEDITION</span>
+          </div>
+          <div class="trip-detail-card__body">
+            <span class="trip-detail-card__tag">Markha Valley · Ladakh</span>
+            <h3 class="trip-detail-card__title">Kang Yatse II Expedition</h3>
+            <p class="trip-detail-card__desc">Summit Kang Yatse II at 6,250m in Ladakh's Markha Valley — a 12-day high-altitude expedition ideal for climbers seeking their first 6,000m+ summit, with glacier travel, rope work, and panoramic views of the Zanskar and Karakoram ranges.</p>
+            <div class="trip-detail-card__stats">
+              <div class="trip-stat"><span class="trip-stat__label">Altitude</span><span class="trip-stat__val">6,250 m</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Duration</span><span class="trip-stat__val">12D / 11N</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Level</span><span class="trip-stat__val" style="color:#e07070">Hard</span></div>
+              <div class="trip-stat"><span class="trip-stat__label">Season</span><span class="trip-stat__val">May–Jun, Sep–Oct</span></div>
+            </div>
+            <div class="trip-detail-card__footer">
+              <div class="trip-detail-card__price">
+                <span class="trip-detail-card__price-label">Starting from</span>
+                <span class="trip-detail-card__price-val">Price on Request</span>
+              </div>
+              <a href="Kangyatse2.html" class="btn btn--primary">View Expedition →</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.trips-full-grid -->
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--clr-surface)">
+    <div class="container" style="max-width:780px">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Got Questions?</span>
+        <h2 class="section-title">Expedition FAQ</h2>
+      </div>
+      <div class="faq" id="faq">
+        <div class="faq-item open">
+          <button class="faq-btn">What fitness level do I need for an expedition?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p>All our expeditions above 6,000m require prior high-altitude trekking experience and strong cardiovascular fitness. We recommend 3–4 months of preparation including loaded hikes, stair climbs, and long-distance running. Prior 5,000m+ trekking experience is mandatory for most expeditions. Our team will guide you through a structured fitness plan after booking.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Is altitude sickness a risk?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p>At altitudes above 5,000m, altitude sickness is a genuine risk. Every Fradpaix expedition is designed with mandatory acclimatisation days, load ferry rotations, and a "climb high, sleep low" approach. Our guides carry supplemental oxygen, pulse oximeters, and are trained in AMS recognition and evacuation procedures. Safety always comes before the summit.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Do I need prior climbing experience?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p>Yes — all expeditions above 6,000m require prior crampon, ice axe, and fixed-rope experience. For some peaks (CB 13, CB 14, Shinkun West) we require prior 6,000m summit experience. Deo Tibba and Hanuman Tibba are suitable for strong trekkers transitioning to mountaineering. Our team can assess your experience during the registration process.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">What technical gear does Fradpaix provide?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p>We provide all technical climbing equipment: ice axes, crampons, harnesses, helmets, jumars, descenders, fixed ropes, carabiners, and snow anchors. We also provide all camp equipment including tents, sleeping bags, mattresses, dining tent, and kitchen gear. You only need personal clothing, footwear, and accessories.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Do I need travel insurance?<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p>Yes — comprehensive travel and medical evacuation insurance is mandatory for all Fradpaix expeditions. It must cover high-altitude mountaineering and helicopter evacuation. Please carry the policy document during the expedition. Our team can advise on suitable coverage for each destination.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="highlight-strip">
+    <div class="container highlight-strip__inner">
+      <div class="highlight-strip__text">
+        <h2>Not Sure Which Expedition Is Right for You?</h2>
+        <p>Our guides are happy to help you choose based on your experience, fitness, and goals.</p>
+      </div>
+      <a href="contact.html" class="btn btn--dark">Talk to a Guide</a>
+    </div>
+  </div>
+
+  <!-- ENQUIRY STRIP -->
+  <section class="enquiry-strip">
+    <div class="container enquiry-strip__inner">
+      <div>
+        <h2 class="enquiry-strip__heading">Have a Question?<br><span>Let's Plan Together.</span></h2>
+        <p class="enquiry-strip__sub">Drop us a quick message and our guides will get back to you within 24 hours. No pressure, just honest conversation.</p>
+        <div class="enquiry-strip__contacts">
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
+            +91-8580475396 / +91-9211737850
+          </div>
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            fradpaix@gmail.com
+          </div>
+        </div>
+      </div>
+      <form class="enq-form" novalidate>
+        <div class="enq-form__grid">
+          <div class="enq-form__group">
+            <label for="enq-name">Name *</label>
+            <input type="text" id="enq-name" name="enq-name" placeholder="Your name" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="enq-phone" name="enq-phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-email">Email</label>
+            <input type="email" id="enq-email" name="enq-email" placeholder="you@example.com">
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-location">Location</label>
+            <input type="text" id="enq-location" name="enq-location" placeholder="City, Country">
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-trip">Expedition of Interest</label>
+            <select id="enq-trip" name="enq-trip">
+              <option value="">— Select an expedition —</option>
+              <option>Mt. Manirang Expedition (6,593m)</option>
+              <option>Mt. Yunam Peak Expedition (6,111m)</option>
+              <option>Hanuman Tibba Expedition (5,982m)</option>
+              <option>Mt. CB 13 Expedition (6,264m)</option>
+              <option>Mt. CB 14 Expedition (6,078m)</option>
+              <option>Shinkun West Expedition (6,127m)</option>
+              <option>Deo Tibba Expedition (6,001m)</option>
+              <option>Kang Yatse I Expedition (6,401m)</option>
+              <option>Kang Yatse II Expedition (6,250m)</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-message">Message</label>
+            <textarea id="enq-message" name="enq-message" placeholder="Tell us about your experience level, dates, and goals..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="enq-form__submit">Send Enquiry via WhatsApp</button>
+        <div class="enq-form__success">Your enquiry has been sent! We will reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link"><img src="logo.png" alt="Fradpaix" class="footer__logo-img" /></a>
+        <p>Small groups. Wild places.<br>Real adventures.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/918580475396" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Adventures</h4><ul>
+        <li><a href="trekking.html">Trekking</a></li>
+        <li><a href="expedition.html">Expeditions</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Contact</h4><ul>
+        <li>fradpaix@gmail.com</li>
+        <li>+91 8580475396</li>
+        <li>+91 9211737850</li>
+        <li>Manali, Himachal Pradesh</li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Fradpaix Expeditions. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918580475396" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bara Bhangal Trek — Fradpaix</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link rel="stylesheet" href="trek.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Fradpaix Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">FRADPAIX</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="trekking.html" class="nav__drop-toggle">Trekking <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIMALAYAN TREKS</div>
+              <div class="nav__submenu-desc">Explore the majestic Himalayas</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="chanderkhani.html">Chanderkhani Pass Trek <span class="nav__submenu-altitude">3,440 m</span></a></li>
+              <li><a href="ghepan-lake.html">Ghepan Lake Trek <span class="nav__submenu-altitude">4,149 m</span></a></li>
+              <li><a href="miyar-valley.html">Miyar Valley Trek <span class="nav__submenu-altitude">3,990 m</span></a></li>
+              <li><a href="bara-bhangal.html">Bara Bhangal Trek <span class="nav__submenu-altitude">4,878 m</span></a></li>
+              <li><a href="parang-la.html">Parang La Trek <span class="nav__submenu-altitude">5,600 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <ul class="nav__links" id="nav-links">
+        <li class="nav__dropdown">
+          <a href="expedition.html" class="nav__drop-toggle">Expedition <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-category">
+              <div class="nav__submenu-title">HIGH ALTITUDE EXPEDITIONS</div>
+              <div class="nav__submenu-desc">Challenge yourself at extreme altitudes</div>
+            </div>
+            <ul class="nav__submenu-items">
+              <li><a href="mt-manirang.html">Mt. Manirang Expedition <span class="nav__submenu-altitude">6,593 m</span></a></li>
+              <li><a href="mt-yunam.html">Mt. Yunam Peak Expedition <span class="nav__submenu-altitude">6,111 m</span></a></li>
+              <li><a href="HanumanTibbaExpedition.html">Hanuman Tibba Expedition <span class="nav__submenu-altitude">5,982 m</span></a></li>
+              <li><a href="cb13-expedition.html">Mt. CB 13 Expedition <span class="nav__submenu-altitude">6,264 m</span></a></li>
+              <li><a href="cb14-expedition.html">Mt. CB 14 Expedition <span class="nav__submenu-altitude">6,078 m</span></a></li>
+              <li><a href="shinkun-west.html">Shinkun West Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="shinkun-south.html">Shinkun South Expedition <span class="nav__submenu-altitude">6,127 m</span></a></li>
+              <li><a href="deo-tibba.html">Deo Tibba Expedition <span class="nav__submenu-altitude">6,001 m</span></a></li>
+              <li><a href="friendship-peak.html">Friendship Peak Expedition <span class="nav__submenu-altitude">5,289 m</span></a></li>
+              <li><a href="Kangyatse1.html">Kang Yatse I Expedition <span class="nav__submenu-altitude">6,401 m</span></a></li>
+              <li><a href="Kangyatse2.html">Kang Yatse II Expedition <span class="nav__submenu-altitude">6,250 m</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Courses <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li class="nav__dropdown">
+          <a href="#" class="nav__drop-toggle">Resources <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <div class="nav__submenu">
+            <div class="nav__submenu-empty">Coming soon</div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html" class="nav__cta">Book Now</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero page-hero--tall">
+    <div class="page-hero__bg" style="background-image:url('image1.jpg')"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="trekking.html">Trekking</a><span>/</span><span>Bara Bhangal</span></div>
+      <span class="page-hero__eyebrow">Himachal Pradesh · India · Manali</span>
+      <h1 class="page-hero__title">Bara Bhangal Trek</h1>
+      <p class="page-hero__sub">Cross Kalihani and Thamsar Pass into one of the Himalaya's most isolated villages — a 12-day odyssey through untamed Himachal.</p>
+      <div class="trek-hero-badges">
+        <span class="trek-badge">Manali</span>
+        <span class="trek-badge">4,878 m</span>
+        <span class="trek-badge">12D / 11N</span>
+        <span class="trek-badge trek-badge--hard">HARD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK STATS BAR -->
+  <div class="trek-stats-bar">
+    <div class="container trek-stats-bar__inner">
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Location</span><span class="trek-qstat__val">Manali, HP</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Max Altitude</span><span class="trek-qstat__val">4,878 m</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Duration</span><span class="trek-qstat__val">12 Days / 11 Nights</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Difficulty</span><span class="trek-qstat__val" style="color:var(--clr-accent)">HARD</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Temperature</span><span class="trek-qstat__val">0°C – 15°C</span></div>
+      <div class="trek-qstat"><span class="trek-qstat__icon"></span><span class="trek-qstat__label">Best Season</span><span class="trek-qstat__val">Jul – Sep</span></div>
+    </div>
+  </div>
+
+  <!-- TAB NAVIGATION -->
+  <nav class="trek-tabs">
+    <div class="container trek-tabs__inner">
+      <a href="#overview" class="trek-tab active" data-panel="overview">Overview</a>
+      <a href="#itinerary" class="trek-tab" data-panel="itinerary">Itinerary</a>
+      <a href="#gear" class="trek-tab" data-panel="gear">Gear</a>
+      <a href="#includes" class="trek-tab" data-panel="includes">Includes</a>
+      <a href="#excludes" class="trek-tab" data-panel="excludes">Excludes</a>
+      <a href="#terms" class="trek-tab" data-panel="terms">Terms</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <div class="trek-body container">
+    <main>
+
+      <!-- OVERVIEW PANEL -->
+      <div class="trek-panel active" data-panel="overview">
+        <div class="trek-overview-grid">
+          <div class="trek-info-card"><span class="trek-info-card__label">REGION</span><span class="trek-info-card__value">Manali, HP</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">DURATION</span><span class="trek-info-card__value">12 Days / 11 Nights</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">MAX ALTITUDE</span><span class="trek-info-card__value">4,878m (16,070 ft)</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">DIFFICULTY</span><span class="trek-info-card__value" style="color:var(--clr-accent)">HARD</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">BEST SEASON</span><span class="trek-info-card__value">Jul–Sep</span></div>
+          <div class="trek-info-card"><span class="trek-info-card__label">TEMPERATURE</span><span class="trek-info-card__value">0°C to 15°C</span></div>
+        </div>
+
+        <h2 class="trek-section-title">About the Trek</h2>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">The Bara Bhangal trek is one of the most demanding and revered high-altitude treks in Himachal Pradesh, connecting the Kullu Valley to the Kangra Valley through remote, rugged terrain. It typically starts from the Kullu side (often via Manali or the Solang/Lamadugh area) and crosses two formidable passes — <strong>Kalihani Pass (~4,800m)</strong> and <strong>Thamsar Pass (~4,700m)</strong> — before descending into the isolated village of Bara Bhangal, one of the most cut-off settlements in the Himalayas, still reliant on traditional shepherd life and only accessible on foot for much of the year.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">From there, the route continues toward Kangra, often exiting via Billing or Rajgundha, famous as a paragliding launch site.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">The trek spans roughly 8–11 days and covers dramatic landscapes: dense forests, high alpine meadows, glacial moraines, and river crossings, with constantly shifting weather that can turn harsh even in summer.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">It's rated <strong>difficult to very difficult</strong>, recommended only for experienced trekkers with prior high-altitude experience, given the technical pass crossings, unpredictable snow conditions, and complete lack of cell connectivity or rescue infrastructure along most of the route.</p>
+        <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.85;margin-bottom:14px">The best season is typically <strong>mid-July to early September</strong>, right after the passes clear of heavy snow but before winter sets in early at that altitude. Given its remoteness and difficulty, this trek is usually done with experienced local guides and porters, and proper acclimatisation is critical, since altitude sickness risk is high throughout.</p>
+
+        <div class="trek-highlight-box">
+          <span></span>
+          <div>
+            <strong>Ready With Frady!</strong>
+            <p>Fradpaix Adventures has been guiding the Bara Bhangal route for years. Our certified trek leaders know every campsite, every stream crossing, and every weather window on this route.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITINERARY PANEL -->
+      <div class="trek-panel" data-panel="itinerary">
+        <h2 class="trek-section-title">12-Day Detailed Itinerary</h2>
+        <div class="trek-accordion">
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 01</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Manali to Lama Dugh</h3>
+                <div class="trek-acc-meta"><span>12 km · 4–5 hrs</span><span>2,050m → 3,017m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Bara Bhangal Trek starts from Manali. We gather in Manali, obtain all necessary licenses and permits, and start early in the morning. The road to Lama Dugh is covered with thick forests offering views of Deo Tibba, Indrasan, and Bara Shigri glaciers. Constant steep slopes lead to the ridge and finally Lama Dugh campsite. Night stay in tents.</p>
+                <div class="trek-acc-tip">One water point at school on the way — carry 2–3 litres.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 02</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Lama Dugh to Riyali Thach</h3>
+                <div class="trek-acc-meta"><span>12 km · 3–4 hrs</span><span>3,017m → 3,400m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>One of the most exciting days. Start early after light breakfast. Walk through sloppy meadow areas with beautiful views. Pass Hanuman Tibba and Dhauladhar Tibba peaks. After ~2 hours reach Riyali Thatch — an amazing place with shepherd huts. Spend the night here discussing the next day's itinerary.</p>
+                <div class="trek-acc-tip">Carry enough water for 3 hours.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 03</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Riyali Thach to Kalihani Base Camp</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>3,400m → 4,010m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Start after light breakfast. The trail is full of steep climbs, gushing streams, bushes, and trees through open meadows. Pass Rani Sui Lake, cross a stream, then continue on a steep 3-hour climb. At Kalihani Base Camp you'll be rewarded with glimpses of Indrasan and Deo Tibba peaks. Overnight in tents.</p>
+                <div class="trek-acc-tip">Carry enough water for 3 hours.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 04</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Kalihani Base Camp to Dhonku Thach</h3>
+                <div class="trek-acc-meta"><span>9–10 hrs</span><span>4,800m → 4,725m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>A long, demanding day — start early after breakfast. Walk on steep climbs revealing elegant views of the Dhauladhar Ranges and Pir Panjal. Alluring glacial lakes and glaciers line the route. After the steep slope, reach the campsite. Overnight in tents.</p>
+                <div class="trek-acc-tip">Very few water points — carry enough for the full day.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 05</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Dhonku Thach to Dev Ki Marhi</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>4,725m → 3,850m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Difficult day through dense forests of Oak and Fir with several ups and downs on a downward trail. The most challenging part is the steep incline before Dev Ki Marhi. Reach campsite around noon — enjoy tea and snacks before spending the night in tents amid picturesque landscapes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 06</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Dev Ki Marhi to Dal Marhi</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>3,850m → 3,900m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Start after a healthy breakfast. Climb upwards towards Dal Marhi through forests, rivers, and the Kalihani stream. Amazing flora and fauna with constant ups and downs. A vertical steep climb at the end makes you exhausted — but the splendid surroundings of Dal Marhi make it worth every step. Dinner and night stay in tents.</p>
+                <div class="trek-acc-tip">Few water points — carry enough for the day.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 07</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Dal Marhi to Bara Bhangal</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>3,900m → 2,900m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Travel downward through deodar forests along the River Ravi. Pass through pine, birch, and rhododendron forests on a steep descent into Bara Bhangal — a small, remote hamlet with vast fields of corn and rajma, a satellite phone, and a hydel power project.</p>
+                <div class="trek-acc-tip">Carry water for more than 6 hours.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 08</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Acclimatisation Day at Bara Bhangal</h3>
+                <div class="trek-acc-meta"><span>Rest Day</span><span>2,900m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Take rest at the campsite in Bara Bhangal. The unique weather conditions need time to adjust to. Explore local sights, discover the tradition and culture, photograph the stunning landscapes, and let the surreal nature of this isolated hamlet refresh you for the journey ahead.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 09</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Bara Bhangal to Mardh</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>2,900m → 3,830m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Fresh after rest, start after breakfast. Cross Thamsar Pass and walk for ~6 hours. After the pass, enter a heaven of pine and birch forests. After reaching Mardh, enjoy tea and snacks. Fun activities and a tasty dinner will remove the day's tiredness. Overnight in tents.</p>
+                <div class="trek-acc-tip">Many water points on this route.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 10</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Mardh to Palachak</h3>
+                <div class="trek-acc-meta"><span>7–8 hrs</span><span>3,830m → 2,400m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Difficult but interesting — travel ~8 hours capturing panoramic views of Kangra Valley. Cross moraines and glaciers to reach Palachak. A small lake appears soon after the moraines. Lush green Kangra Valley, forests, streams, and huge mountains reconnect you to yourself. Night in tents at Palachak.</p>
+                <div class="trek-acc-tip">Only one lake on this road — carry enough water.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 11</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Palachak to Bir</h3>
+                <div class="trek-acc-meta"><span>5–6 hrs</span><span>2,400m → 2,300m</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>One of the easiest days. Flat route traversing pine trees and Kangra Valley. Vehicle arranged from Billing to drop at Bir — one of the most elegant spots in Himachal, famous for paragliding and breathtaking beauty.</p>
+                <div class="trek-acc-tip">Many streams available for water.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trek-acc-item">
+            <button class="trek-acc-btn">
+              <span class="trek-acc-day">DAY 12</span>
+              <div class="trek-acc-info">
+                <h3 class="trek-acc-title">Departure from Bir</h3>
+                <div class="trek-acc-meta"><span>End of Trek</span></div>
+              </div>
+              <div class="trek-acc-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </button>
+            <div class="trek-acc-body">
+              <div class="trek-acc-content">
+                <p>Leave Bir after breakfast. Choose to stay and explore, or pick up a flight back to your city. You can spend some hours discovering alluring Bir-Billing and its hidden spots.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GEAR PANEL -->
+      <div class="trek-panel" data-panel="gear">
+        <h2 class="trek-section-title">Things to Carry</h2>
+        <div class="trek-gear-grid">
+          <div class="trek-gear-box">
+            <h4>CLIMBING &amp; TECHNICAL GEAR</h4>
+            <ul class="trek-list">
+              <li>ID Card (Passport, visa, voter ID)</li>
+              <li>Down sleeping bag</li>
+              <li>Down mattress (inflatable)</li>
+              <li>Waterproof stuff sack</li>
+              <li>Rucksack and duffle bag</li>
+              <li>Headlamp with extra batteries</li>
+              <li>Pocket Swiss knife</li>
+              <li>Trekking poles</li>
+              <li>Gaiters and microspikes</li>
+            </ul>
+          </div>
+          <div class="trek-gear-box">
+            <h4>CLOTHING &amp; PERSONAL ITEMS</h4>
+            <ul class="trek-list">
+              <li>Full-sleeve T-shirts / sweatshirts</li>
+              <li>Thermal body warmer (upper &amp; lower)</li>
+              <li>Warm jacket (wrist &amp; neck closed)</li>
+              <li>Quick-dry track pants (2 pairs)</li>
+              <li>Rain jacket &amp; pants</li>
+              <li>Waterproof gloves, woolen cap, sun hat</li>
+              <li>UV protection sunglasses</li>
+              <li>High-ankle trekking shoes (non-skid)</li>
+              <li>Light sandals / quick-dry footwear</li>
+              <li>2 water bottles (1 litre each)</li>
+              <li>Sunscreen and lip balm</li>
+              <li>Personal medicines</li>
+              <li>Medical certificate &amp; Photo ID</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- INCLUDES PANEL -->
+      <div class="trek-panel" data-panel="includes">
+        <h2 class="trek-section-title">What's Included</h2>
+        <ul class="trek-list">
+          <li>Forest permits and campsite charges</li>
+          <li>Tents, sleeping mats, utensils &amp; sleeping bags</li>
+          <li>All meals on trek (veg and egg options)</li>
+          <li>Certified trek leaders with mountaineering experience</li>
+          <li>Safety equipment — pulleys, static rescue rope, seat harness</li>
+          <li>Transportation from Manali to Bir &amp; vice versa</li>
+          <li>Staff insurance by Fradpaix Adventures</li>
+          <li>Common porter for all group members</li>
+          <li>Oxygen cylinders and medical aid kit</li>
+          <li>Accommodation on the first day</li>
+        </ul>
+      </div>
+
+      <!-- EXCLUDES PANEL -->
+      <div class="trek-panel" data-panel="excludes">
+        <h2 class="trek-section-title">What's Not Included</h2>
+        <ul class="trek-list trek-list--excl">
+          <li>Trekker's personal travel insurance</li>
+          <li>Personal expenses</li>
+          <li>Porter for personal belongings (chargeable)</li>
+          <li>Meals and stay on last day at Manali</li>
+          <li>Any item not listed under Inclusions</li>
+          <li>Personal backpack / luggage</li>
+        </ul>
+
+        <div class="offload-box" style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:8px;padding:20px;margin-top:24px">
+          <strong style="font-size:0.9rem;font-weight:700;color:var(--clr-white);display:block;margin-bottom:12px">Backpack Offloading Charges</strong>
+          <p style="color:var(--clr-muted);font-size:0.88rem;margin-bottom:8px">₹7,000 — booked 10+ days before trek date</p>
+          <p style="color:var(--clr-muted);font-size:0.88rem;margin-bottom:8px">₹8,500 — booked after reaching Manali</p>
+          <p style="color:var(--clr-accent);font-size:0.82rem;margin-top:12px">Max luggage: 11 kg · No suitcases or trolleys</p>
+        </div>
+      </div>
+
+      <!-- TERMS PANEL -->
+      <div class="trek-panel" data-panel="terms">
+        <h2 class="trek-section-title">Cancellation Policy</h2>
+        <p style="color:var(--clr-muted);margin-bottom:24px">All cancellations must be submitted in writing via email to <a href="mailto:fradpaix@gmail.com" style="color:var(--clr-accent)">fradpaix@gmail.com</a> or through the booking method.</p>
+        <div class="cancel-table">
+          <div class="cancel-row cancel-row--header"><span>Notice Period</span><span>Refund</span><span>Cancellation Charge</span></div>
+          <div class="cancel-row"><span>More than 15 days prior</span><span class="refund-good">60%</span><span>40%</span></div>
+          <div class="cancel-row"><span>7–15 days prior</span><span class="refund-mid">50%</span><span>50%</span></div>
+          <div class="cancel-row"><span>2–7 days prior</span><span class="refund-low">30%</span><span>70%</span></div>
+          <div class="cancel-row"><span>Less than 2 days / No-show</span><span class="refund-none">0%</span><span>100%</span></div>
+        </div>
+        <p style="color:var(--clr-muted);font-size:0.85rem;margin-top:16px">Refunds, if applicable, will be processed within 7–10 business days via the original payment method.</p>
+      </div>
+
+    </main>
+
+    <aside class="trek-sticky-sidebar">
+      <div class="trek-book-card">
+        <div class="trek-book-card__top">
+          <span class="trek-book-card__label">Starting from</span>
+          <span class="trek-book-card__price">₹18,500<span>/person</span></span>
+        </div>
+        <div class="trek-book-card__badges">
+          <span>Manali</span><span>4,878 m</span><span>12D/11N</span>
+          <span style="color:var(--clr-accent)">Hard</span>
+        </div>
+        <a href="booking.html?trek=Bara+Bhangal+Trek+(4%2C878m)" class="btn btn--primary btn--full" style="margin-top:8px">Book This Trek</a>
+        <a href="https://wa.me/918580475396?text=Hi%20Fradpaix%2C%20I%20am%20interested%20in%20the%20Bara%20Bhangal%20Trek" target="_blank" rel="noopener" class="btn--wa-book">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.87.99 1.03-3.76-.24-.39A9.96 9.96 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.49-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.70.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <div class="trek-book-card__contact">
+          <a href="tel:+918580475396">+91 85804 75396</a>
+          <a href="tel:+919211737850">+91 92117 37850</a>
+          <a href="mailto:fradpaix@gmail.com">fradpaix@gmail.com</a>
+        </div>
+        <div class="trek-book-card__divider"></div>
+        <div class="trek-book-card__includes">
+          <strong>Price includes:</strong>
+          <ul>
+            <li>✓ All meals on trek</li>
+            <li>✓ Tents &amp; sleeping bags</li>
+            <li>✓ Certified trek leader</li>
+            <li>✓ Safety equipment</li>
+            <li>✓ Manali–Bir transport</li>
+            <li>✓ Forest permits</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div><!-- /.trek-body -->
+  <!-- ENQUIRY STRIP -->
+  <section class="enquiry-strip">
+    <div class="container enquiry-strip__inner">
+      <div>
+        <h2 class="enquiry-strip__heading">Have a Question?<br><span>Let's Plan Together.</span></h2>
+        <p class="enquiry-strip__sub">Drop us a quick message and our guides will get back to you within 24 hours. No pressure, just honest conversation.</p>
+        <div class="enquiry-strip__contacts">
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.57 2.61a2 2 0 0 1-.45 2.11L8 9.67a16 16 0 0 0 6.33 6.33l1.23-1.23a2 2 0 0 1 2.11-.45c.84.25 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2"/></svg>
+            +91-8580475396 / +91-9211737850
+          </div>
+          <div class="enquiry-strip__contact">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            fradpaix@gmail.com
+          </div>
+        </div>
+      </div>
+      <form class="enq-form" novalidate>
+        <div class="enq-form__grid">
+          <div class="enq-form__group">
+            <label for="enq-name">Name *</label>
+            <input type="text" id="enq-name" name="enq-name" placeholder="Your name" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-phone">Phone / WhatsApp *</label>
+            <input type="tel" id="enq-phone" name="enq-phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-email">Email</label>
+            <input type="email" id="enq-email" name="enq-email" placeholder="you@example.com">
+          </div>
+          <div class="enq-form__group">
+            <label for="enq-location">Location</label>
+            <input type="text" id="enq-location" name="enq-location" placeholder="City, Country">
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-trip">Trip of Interest</label>
+            <select id="enq-trip" name="enq-trip">
+              <option value="">— Select a trek / expedition —</option>
+              <option>Chanderkhani Pass Trek (3,440m)</option>
+              <option>Ghepan Lake Trek (4,149m)</option>
+              <option>Miyar Valley Trek (3,990m)</option>
+              <option>Bara Bhangal Trek (4,878m)</option>
+              <option>Parang La Trek (5,600m)</option>
+              <option>Mt. Manirang Expedition (6,593m)</option>
+              <option>Mt. Yunam Peak Expedition (6,111m)</option>
+              <option>Hanuman Tibba Expedition (5,982m)</option>
+              <option>Mt. CB 13 Expedition (6,264m)</option>
+              <option>Mt. CB 14 Expedition (6,078m)</option>
+              <option>Shinkun West Expedition (6,127m)</option>
+              <option>Shinkun South Expedition (6,127m)</option>
+              <option>Deo Tibba Expedition (6,001m)</option>
+              <option>Friendship Peak Expedition (5,289m)</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div class="enq-form__group enq-form__group--full">
+            <label for="enq-message">Message</label>
+            <textarea id="enq-message" name="enq-message" placeholder="Tell us about your plans, dates, group size..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="enq-form__submit">Send Enquiry via WhatsApp</button>
+        <div class="enq-form__success">Your enquiry has been sent! We will reply within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link"><img src="logo.png" alt="Fradpaix" class="footer__logo-img" /></a>
+        <p>Small groups. Wild places.<br>Real adventures.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon social-icon--ig"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/918580475396" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon social-icon--wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52z"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon social-icon--fb"><svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Adventures</h4><ul><li><a href="trekking.html">Trekking</a></li><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Contact</h4><ul><li>fradpaix@gmail.com</li><li>+91 8580475396</li><li>+91 9211737850</li><li>Manali, Himachal Pradesh</li></ul></div>
+    </div>
+    <div class="footer__bottom"><div class="container"><p>© 2026 Fradpaix Expeditions. All rights reserved.</p><p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p></div></div>
+  </footer>
+
+  <a href="https://wa.me/918580475396" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52z" fill="currentColor"/></svg>
+  </a>
+
+  <button class="book-float" id="book-float-btn" aria-label="Book This Trek">
+    <svg viewBox="0 0 24 24"><path d="M19 2H5C3.9 2 3 2.9 3 4V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V4C21 2.9 20.1 2 19 2ZM19 20H5V4H19V20ZM7 10H9V17H7V10ZM11 7H13V17H11V7ZM15 13H17V17H15V13Z" fill="currentColor"/></svg>
+  </button>
+
+  <div class="booking-modal" id="booking-modal">
+    <div class="booking-modal__content">
+      <div class="booking-modal__header">
+        <h2 class="booking-modal__title">Book This Trek</h2>
+        <p class="booking-modal__subtitle">Fill in your details and we'll get back to you within 24 hours</p>
+        <button class="booking-modal__close" id="booking-modal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="booking-modal__body">
+        <form id="booking-form">
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-name">Full Name <span>*</span></label><input type="text" id="booking-name" class="booking-form__input" required placeholder="Enter your full name"></div>
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-email">Email Address</label><input type="email" id="booking-email" class="booking-form__input" placeholder="your@email.com"></div>
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-phone">Phone Number <span>*</span></label><input type="tel" id="booking-phone" class="booking-form__input" required placeholder="+91 XXXXX XXXXX"></div>
+          <div class="booking-form__group">
+            <label class="booking-form__label" for="booking-trek">Select Trek <span>*</span></label>
+            <select id="booking-trek" class="booking-form__select" required>
+              <option value="">-- Choose a trek --</option>
+              <option value="Mt. Manirang Expedition (6,593m)">Mt. Manirang Expedition (6,593m)</option>
+              <option value="Mt. Yunam Peak Expedition (6,111m)">Mt. Yunam Peak Expedition (6,111m)</option>
+              <option value="Parang La Trek (5,600m)">Parang La Trek (5,600m)</option>
+              <option value="Bara Bhangal Trek (4,878m)" selected>Bara Bhangal Trek (4,878m)</option>
+              <option value="Miyar Valley Trek (3,990m)">Miyar Valley Trek (3,990m)</option>
+              <option value="Ghepan Lake Trek (4,149m)">Ghepan Lake Trek (4,149m)</option>
+              <option value="Chanderkhani Pass Trek (3,440m)">Chanderkhani Pass Trek (3,440m)</option>
+            </select>
+          </div>
+          <div class="booking-form__price" id="booking-price-display"><span class="booking-form__price-label">Trek Price</span><div class="booking-form__price-amount"></div></div>
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-dates">Preferred Dates</label><input type="text" id="booking-dates" class="booking-form__input" placeholder="e.g., July 15-26, 2026"></div>
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-people">Number of People</label><input type="number" id="booking-people" class="booking-form__input" min="1" placeholder="1"></div>
+          <div class="booking-form__group"><label class="booking-form__label" for="booking-message">Special Requirements</label><textarea id="booking-message" class="booking-form__textarea" placeholder="Any dietary restrictions, medical conditions, or questions..."></textarea></div>
+          <button type="submit" class="booking-form__submit"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.18-1.57A12.02 12.02 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52z"/></svg> Send via WhatsApp</button>
+          <div class="booking-form__note">Your booking details will be sent via WhatsApp. We'll confirm availability within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
