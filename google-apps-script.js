@@ -69,9 +69,48 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
+// Handle GET (health check / CORS preflight / data fetch)
+function doGet(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const type = e && e.parameter && e.parameter.type;
 
-// Handle GET (health check / CORS preflight)
-function doGet() {
+  if (type === 'leads') {
+    const sheet = ss.getSheetByName(LEADS_SHEET);
+    if (!sheet || sheet.getLastRow() < 2) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ ok: true, leads: [] }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, LEAD_HEADERS.length).getValues();
+    const leads = rows.map(row => ({
+      id:         row[0],
+      createdAt:  row[1],
+      status:     row[2],
+      source:     row[3],
+      name:       row[4],
+      phone:      row[5],
+      email:      row[6],
+      location:   row[7],
+      country:    row[8],
+      trip:       row[9],
+      dates:      row[10],
+      people:     row[11],
+      region:     row[12],
+      price:      row[13],
+      budget:     row[14],
+      age:        row[15],
+      experience: row[16],
+      fitness:    row[17],
+      addons:     row[18],
+      medical:    row[19],
+      subject:    row[20],
+      message:    row[21]
+    }));
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: true, leads }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true, service: 'Fradpaix CRM' }))
     .setMimeType(ContentService.MimeType.JSON);
@@ -144,3 +183,4 @@ function appendVisitor(ss, v) {
     v.lastSeen   || ''
   ]);
 }
+
