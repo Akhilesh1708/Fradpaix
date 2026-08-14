@@ -35,7 +35,10 @@ window.FradpaixSheets = (function () {
   const existing = localStorage.getItem(CONSENT_KEY);
 
   if (existing) {
-    if (existing === 'allowed') window.FradpaixAnalytics && window.FradpaixAnalytics.init();
+      if (existing === 'allowed') {
+      // Defer until FradpaixAnalytics is defined later in this script
+      setTimeout(() => window.FradpaixAnalytics && window.FradpaixAnalytics.init(), 0);
+    }
     return;
   }
 
@@ -48,14 +51,7 @@ window.FradpaixSheets = (function () {
       <div class="cookie-banner__icon">🍪</div>
       <div class="cookie-banner__text">
         <strong>We value your privacy</strong>
-        <p>Fradpaix uses cookies to enhance your browsing experience and understand how visitors use our site. We collect anonymised data — your IP address, browser type, and pages visited — to improve our services. We never sell your data to third parties.</p>
-        <button type="button" class="cookie-banner__details-toggle">What exactly do we collect? ▾</button>
-        <ul class="cookie-banner__details" hidden>
-          <li>🌍 <b>IP address & location</b> — to understand which regions our visitors come from</li>
-          <li>🖥️ <b>Browser & device type</b> — to ensure the site works well on your device</li>
-          <li>📄 <b>Pages visited</b> — to see which adventures interest you most</li>
-          <li>⏱️ <b>First & last visit time</b> — to measure returning interest</li>
-        </ul>
+        <p>Fradpaix uses cookies to enhance your browsing experience and understand how visitors use our site. We collect anonymised data to improve our services. We never sell your data to third parties.</p>
       </div>
     </div>
     <div class="cookie-banner__actions">
@@ -64,19 +60,12 @@ window.FradpaixSheets = (function () {
     </div>`;
   document.body.appendChild(banner);
 
-  // Toggle details
-  banner.querySelector('.cookie-banner__details-toggle').addEventListener('click', function () {
-    const list = banner.querySelector('.cookie-banner__details');
-    const open = !list.hidden;
-    list.hidden = open;
-    this.textContent = open ? 'What exactly do we collect? ▾' : 'Hide details ▴';
-  });
 
   const finish = choice => {
     localStorage.setItem(CONSENT_KEY, choice);
     banner.classList.add('cookie-banner--hide');
     setTimeout(() => banner.remove(), 400);
-    if (choice === 'allowed') window.FradpaixAnalytics && window.FradpaixAnalytics.init();
+    if (choice === 'allowed') setTimeout(() => window.FradpaixAnalytics && window.FradpaixAnalytics.init(), 0);
   };
 
   banner.querySelector('.cookie-banner__allow').addEventListener('click',  () => finish('allowed'));
