@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory — Fradpaix CRM</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #040a12; color: var(--clr-text); font-family: var(--ff-sans); }
+
+/* ── TOP BAR ── */
+.crm-topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: 56px; background: #02050d; border-bottom: 1px solid #0f1e36;
+  display: flex; align-items: center; padding: 0 16px; gap: 12px;
+}
+.crm-topbar__brand { display:flex; align-items:center; gap:8px; text-decoration:none; margin-right:auto; }
+.crm-topbar__brand img  { height:28px; }
+.crm-topbar__brand span { font-weight:700; letter-spacing:.1em; color:#fff; font-size:.88rem; }
+.crm-topbar__nav { display:flex; align-items:center; gap:4px; }
+.crm-topbar__nav a, .crm-topbar__nav button {
+  padding:6px 12px; border-radius:8px; font:500 .78rem var(--ff-sans);
+  color:#7f8ba0; text-decoration:none; border:0; background:transparent; cursor:pointer; transition:all .18s;
+}
+.crm-topbar__nav a:hover,.crm-topbar__nav button:hover,
+.crm-topbar__nav a.active { color:#fff; background:#0f1e36; }
+.crm-topbar__nav .logout-btn { color:#e69090; }
+.crm-topbar__nav .logout-btn:hover { background:#1c0808; color:#ffb3bf; }
+
+/* ── BODY ── */
+.inv-body { padding: 68px 16px 80px; max-width: 1400px; margin: 0 auto; }
+
+/* ── PAGE HEADER ── */
+.inv-page-header { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; margin-bottom:20px; flex-wrap:wrap; }
+.inv-page-header h1 { font-family:var(--ff-serif); font-size:clamp(1.3rem,4vw,1.9rem); color:#fff; margin-bottom:2px; }
+.inv-page-header p  { color:#7f8ba0; font-size:.82rem; }
+.inv-page-header__actions { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
+/* ── KPI STATS ── */
+.crm-stats { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:20px; }
+.crm-stat  { background:#02050d; border:1px solid #0f1e36; border-radius:12px; padding:14px 16px; position:relative; overflow:hidden; }
+.crm-stat::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--stat-color,#2c4fc4); }
+.crm-stat__label { font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#7f8ba0; margin-bottom:6px; }
+.crm-stat__value { font-family:var(--ff-serif); font-size:1.7rem; font-weight:700; color:#fff; line-height:1; }
+.crm-stat__sub   { font-size:.65rem; color:#7f8ba0; margin-top:4px; }
+
+/* ── CATEGORY TABS ── */
+.inv-cat-tabs { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap; }
+.inv-cat-tab  { padding:5px 14px; border-radius:20px; font:500 .75rem var(--ff-sans); cursor:pointer; border:1px solid #1a2b47; background:#02050d; color:#7f8ba0; transition:all .18s; white-space:nowrap; }
+.inv-cat-tab:hover  { border-color:#2f7df6; color:#fff; }
+.inv-cat-tab.active { background:#2c4fc4; border-color:#2c4fc4; color:#fff; }
+
+/* ── TOOLBAR ── */
+.crm-toolbar { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+.crm-toolbar__search  { flex:1; min-width:160px; height:40px; background:#02050d; border:1px solid #1a2b47; border-radius:9px; color:#fff; padding:0 12px; font:400 .85rem var(--ff-sans); }
+.crm-toolbar__search:focus { outline:none; border-color:#2f7df6; }
+.crm-toolbar__select  { height:40px; background:#02050d; border:1px solid #1a2b47; border-radius:9px; color:#fff; padding:0 12px; font:400 .82rem var(--ff-sans); cursor:pointer; }
+
+/* ── DESKTOP TABLE ── */
+.inv-table-wrap { background:#02050d; border:1px solid #0f1e36; border-radius:14px; overflow:hidden; display:none; }
+.inv-table { width:100%; border-collapse:collapse; }
+.inv-table th { padding:11px 14px; text-align:left; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#7f8ba0; border-bottom:1px solid #0f1e36; white-space:nowrap; }
+.inv-table td { padding:12px 14px; font-size:.84rem; color:#c8d8ec; border-bottom:1px solid #080e1a; vertical-align:middle; }
+.inv-table tr:last-child td { border-bottom:none; }
+.inv-table tr:hover td { background:rgba(47,125,246,.04); }
+.inv-table td.item-name { color:#fff; font-weight:600; }
+.inv-table td.mono { font-family:monospace; font-size:.78rem; color:#7f8ba0; }
+.inv-row-actions { display:flex; gap:5px; }
+
+/* ── MOBILE CARDS ── */
+.inv-cards { display:flex; flex-direction:column; gap:10px; }
+.inv-card  { background:#02050d; border:1px solid #0f1e36; border-radius:12px; padding:14px 16px; }
+.inv-card:hover { border-color:#1a2b47; }
+.inv-card__header { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:12px; }
+.inv-card__name  { color:#fff; font-weight:700; font-size:.95rem; margin-bottom:4px; }
+.inv-card__meta  { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.inv-card__stats { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:12px; }
+.inv-card__stat  { background:#060e1a; border-radius:8px; padding:8px 10px; }
+.inv-card__stat-label { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:#7f8ba0; display:block; margin-bottom:3px; }
+.inv-card__stat-val   { font-size:.88rem; font-weight:600; color:#fff; }
+.inv-card__actions { display:flex; gap:8px; flex-wrap:wrap; }
+
+/* ── HISTORY MOBILE CARDS ── */
+.inv-hist-cards { display:flex; flex-direction:column; gap:8px; }
+.inv-hist-card  { background:#02050d; border:1px solid #0f1e36; border-radius:10px; padding:12px 14px; }
+.inv-hist-card--returned { opacity:.65; }
+.inv-hist-card__top  { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
+.inv-hist-card__name { color:#fff; font-weight:600; font-size:.88rem; }
+.inv-hist-card__sub  { color:#7f8ba0; font-size:.75rem; margin-top:2px; }
+.inv-hist-card__qty  { background:#0f1e36; color:#7aaef5; font-weight:700; font-size:.8rem; padding:3px 10px; border-radius:20px; white-space:nowrap; }
+.inv-hist-card__dates { display:flex; gap:14px; font-size:.75rem; color:#4a6280; margin-bottom:6px; flex-wrap:wrap; }
+.inv-hist-card__note { font-size:.75rem; color:#7f8ba0; font-style:italic; }
+
+/* ── HISTORY SECTION ── */
+.inv-history { background:#02050d; border:1px solid #0f1e36; border-radius:14px; padding:20px 16px; margin-top:24px; }
+.inv-history h3 { font-family:var(--ff-serif); color:#fff; font-size:1rem; margin-bottom:14px; }
+.inv-history-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
+.inv-history-table { width:100%; border-collapse:collapse; display:none; }
+.inv-history-table th { padding:9px 12px; text-align:left; font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#7f8ba0; border-bottom:1px solid #0f1e36; }
+.inv-history-table td { padding:10px 12px; font-size:.8rem; color:#c8d8ec; border-bottom:1px solid #080e1a; }
+.inv-history-table tr:last-child td { border-bottom:none; }
+
+/* ── BADGES ── */
+.stock-badge { display:inline-block; padding:3px 9px; border-radius:20px; font-size:.67rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+.stock-badge--ok      { background:rgba(46,125,50,.18);  color:#7ed67e; border:1px solid #2e7d32; }
+.stock-badge--low     { background:rgba(184,138,0,.18);  color:#e6c84a; border:1px solid #b88a00; }
+.stock-badge--out     { background:rgba(110,42,42,.3);   color:#ffb3bf; border:1px solid #6e2a2a; }
+.cond-badge { display:inline-block; padding:2px 8px; border-radius:5px; font-size:.68rem; font-weight:600; }
+.cond-badge--good   { background:#0b1f0e; color:#7ed67e; }
+.cond-badge--fair   { background:#1a1500; color:#e6c84a; }
+.cond-badge--repair { background:#1c0808; color:#ffb3bf; }
+.cond-badge--retired{ background:#111;    color:#555; }
+.inv-cat-chip { display:inline-block; padding:2px 8px; border-radius:5px; font-size:.68rem; font-weight:600; background:#071028; color:#7aaef5; border:1px solid #1a2b47; }
+
+/* ── ACTION BUTTONS ── */
+.inv-action-btn { padding:6px 14px; border-radius:7px; font:500 .78rem var(--ff-sans); cursor:pointer; transition:all .18s; border:1px solid transparent; white-space:nowrap; }
+.inv-action-btn--edit { background:#071028; border-color:#1a2b47; color:#7aaef5; }
+.inv-action-btn--edit:hover { border-color:#2f7df6; color:#fff; }
+.inv-action-btn--out  { background:#1a1500; border-color:#b88a00; color:#e6c84a; }
+.inv-action-btn--out:hover  { background:#2a2000; color:#fff; }
+.inv-action-btn--del  { background:transparent; border-color:#3a1414; color:#e69090; }
+.inv-action-btn--del:hover  { background:#1c0808; }
+
+/* ── BUTTONS ── */
+.btn-crm { height:38px; padding:0 16px; border-radius:8px; border:1px solid #1a2b47; background:#02050d; color:#abc4e7; font:500 .78rem var(--ff-sans); cursor:pointer; transition:all .18s; white-space:nowrap; }
+.btn-crm:hover { border-color:#2f7df6; color:#fff; }
+.btn-crm:disabled { opacity:.5; cursor:not-allowed; }
+.btn-crm--primary { background:#2c4fc4; border-color:#2c4fc4; color:#fff; }
+.btn-crm--primary:hover { opacity:.85; }
+.btn-crm--warn { border-color:#b88a00; color:#e6c84a; }
+.btn-crm--warn:hover { background:#1a1500; }
+.btn-crm--danger { border-color:#6e2a2a; color:#e69090; }
+.btn-crm--danger:hover { background:#1c0808; }
+
+/* ── EMPTY STATE ── */
+.inv-empty { padding:48px 20px; text-align:center; border:1px dashed #0f1e36; border-radius:12px; color:#4a6280; }
+.inv-empty svg { width:44px; height:44px; color:#1a2b47; margin-bottom:14px; display:block; margin-left:auto; margin-right:auto; }
+.inv-empty h3 { color:#7f8ba0; font-size:.95rem; margin-bottom:6px; }
+.inv-empty p  { font-size:.82rem; }
+
+/* ── MODALS ── */
+.inv-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:500; align-items:flex-end; justify-content:center; padding:0; }
+.inv-modal-overlay.open { display:flex; }
+.inv-modal { background:#02050d; border:1px solid #1a2b47; border-radius:18px 18px 0 0; padding:24px 18px 32px; width:100%; max-height:92vh; overflow-y:auto; position:relative; }
+.inv-modal h3 { font-family:var(--ff-serif); color:#fff; font-size:1.15rem; margin-bottom:18px; }
+.inv-modal__close { position:absolute; top:14px; right:16px; background:transparent; border:0; color:#7f8ba0; font-size:1.4rem; cursor:pointer; line-height:1; padding:4px; }
+.inv-modal__close:hover { color:#fff; }
+.inv-modal-form { display:grid; gap:14px; }
+.inv-modal-form label { display:block; color:#7f8ba0; font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:5px; }
+.inv-modal-form input, .inv-modal-form select, .inv-modal-form textarea {
+  width:100%; background:#010308; border:1px solid #1a2b47; border-radius:9px;
+  color:#fff; padding:11px 14px; font:400 .9rem var(--ff-sans);
+  -webkit-appearance:none; appearance:none;
+}
+.inv-modal-form input[type="number"] { -moz-appearance:textfield; }
+.inv-modal-form input:focus, .inv-modal-form select:focus, .inv-modal-form textarea:focus { outline:none; border-color:#2f7df6; }
+.inv-modal-form textarea { min-height:72px; resize:vertical; }
+.inv-modal-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.inv-modal-actions { display:flex; gap:10px; justify-content:flex-end; margin-top:6px; }
+.inv-modal-actions .btn-crm { height:44px; font-size:.85rem; flex:1; }
+
+/* ── DRAG HANDLE (mobile sheet feel) ── */
+.inv-modal::before { content:''; display:block; width:40px; height:4px; background:#1a2b47; border-radius:2px; margin:0 auto 20px; }
+
+/* ── RESPONSIVE ── */
+
+/* Tablet+ — show table, hide cards */
+@media(min-width:768px) {
+  .inv-body { padding: 68px 24px 60px; }
+  .crm-stats { grid-template-columns:repeat(5,1fr); }
+  .inv-table-wrap { display:block; }
+  .inv-cards { display:none !important; }
+  .inv-history-table { display:table; }
+  .inv-hist-cards { display:none !important; }
+  .inv-modal-overlay { align-items:center; padding:20px; }
+  .inv-modal { border-radius:18px; max-width:560px; }
+  .inv-modal::before { display:none; }
+}
+
+@media(min-width:1024px) {
+  .inv-body { padding: 72px 28px 60px; }
+}
+
+/* Mobile — stat grid 2-col */
+@media(max-width:767px) {
+  .crm-stats { grid-template-columns:repeat(2,1fr); }
+  .crm-stats .crm-stat:last-child { grid-column:1/-1; }
+  .inv-modal-grid2 { grid-template-columns:1fr; }
+  .crm-topbar__nav a:not(.active):not(.logout-btn):not(:last-child) { display:none; }
+}
+
+@media(max-width:420px) {
+  .inv-page-header__actions { width:100%; }
+  .inv-page-header__actions .btn-crm { flex:1; text-align:center; }
+}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="crm-topbar">
+  <a href="crm.html" class="crm-topbar__brand">
+    <img src="logo.png" alt="Fradpaix" />
+    <span>FRADPAIX</span>
+  </a>
+  <nav class="crm-topbar__nav">
+    <a href="crm.html">Leads</a>
+    <a href="crm-analytics.html">Analytics</a>
+    <a href="crm-inventory.html" class="active">Inventory</a>
+    <button type="button" class="logout-btn" data-crm-logout>Sign Out</button>
+  </nav>
+</header>
+
+<main class="inv-body">
+
+  <!-- PAGE HEADER -->
+  <div class="inv-page-header">
+    <div>
+      <h1>Inventory</h1>
+      <p>Gear, equipment & camp supplies &nbsp;<span id="inv-sync-status" style="display:none;font-size:.75rem"></span></p>
+    </div>
+    <div class="inv-page-header__actions">
+      <button class="btn-crm" id="inv-refresh-btn">⟳ Refresh</button>
+      <button class="btn-crm btn-crm--warn" id="inv-checkout-btn">📤 Check Out</button>
+      <button class="btn-crm btn-crm--primary" id="inv-add-btn">＋ Add Item</button>
+      <button class="btn-crm" id="inv-export-btn">⬇ CSV</button>
+    </div>
+  </div>
+
+  <!-- KPI STATS -->
+  <div class="crm-stats">
+    <div class="crm-stat" style="--stat-color:#2c4fc4"><div class="crm-stat__label">Total SKUs</div><div class="crm-stat__value" id="stat-total">0</div></div>
+    <div class="crm-stat" style="--stat-color:#7ed67e"><div class="crm-stat__label">In Stock</div><div class="crm-stat__value" id="stat-instock">0</div><div class="crm-stat__sub">units</div></div>
+    <div class="crm-stat" style="--stat-color:#e6c84a"><div class="crm-stat__label">Low Stock</div><div class="crm-stat__value" id="stat-low">0</div></div>
+    <div class="crm-stat" style="--stat-color:#ffb3bf"><div class="crm-stat__label">Out of Stock</div><div class="crm-stat__value" id="stat-out">0</div></div>
+    <div class="crm-stat" style="--stat-color:#7aaef5"><div class="crm-stat__label">Checked Out</div><div class="crm-stat__value" id="stat-service">0</div></div>
+  </div>
+
+  <!-- CATEGORY TABS -->
+  <div class="inv-cat-tabs" id="inv-cat-tabs">
+    <button class="inv-cat-tab active" data-cat="all">All</button>
+    <button class="inv-cat-tab" data-cat="Climbing">🧗 Climbing</button>
+    <button class="inv-cat-tab" data-cat="Camping">⛺ Camping</button>
+    <button class="inv-cat-tab" data-cat="Trekking">🥾 Trekking</button>
+    <button class="inv-cat-tab" data-cat="Safety">🦺 Safety</button>
+    <button class="inv-cat-tab" data-cat="Navigation">🧭 Navigation</button>
+    <button class="inv-cat-tab" data-cat="Kitchen">🍳 Kitchen</button>
+    <button class="inv-cat-tab" data-cat="Medical">🏥 Medical</button>
+    <button class="inv-cat-tab" data-cat="Other">📦 Other</button>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="crm-toolbar">
+    <input type="search" class="crm-toolbar__search" id="inv-search" placeholder="🔍  Search items…" />
+    <select class="crm-toolbar__select" id="inv-filter-status">
+      <option value="all">All Statuses</option>
+      <option value="ok">In Stock</option>
+      <option value="low">Low Stock</option>
+      <option value="out">Out of Stock</option>
+    </select>
+    <select class="crm-toolbar__select" id="inv-filter-condition">
+      <option value="all">All Conditions</option>
+      <option value="Good">Good</option>
+      <option value="Fair">Fair</option>
+      <option value="Needs Repair">Needs Repair</option>
+      <option value="Retired">Retired</option>
+    </select>
+  </div>
+
+  <!-- DESKTOP TABLE -->
+  <div class="inv-table-wrap">
+    <table class="inv-table" id="inv-table">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>SKU</th>
+          <th>Total</th>
+          <th>Available</th>
+          <th>Low At</th>
+          <th>Condition</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inv-tbody"></tbody>
+    </table>
+  </div>
+
+  <!-- MOBILE CARDS -->
+  <div class="inv-cards" id="inv-cards"></div>
+
+  <!-- EMPTY STATE -->
+  <div class="inv-empty" id="inv-empty" style="display:none">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <h3>No inventory items yet</h3>
+    <p>Tap "+ Add Item" to start tracking your gear.</p>
+  </div>
+
+  <!-- CHECKOUT HISTORY -->
+  <div class="inv-history">
+    <div class="inv-history-header">
+      <h3>📋 Checkout History</h3>
+      <button class="btn-crm btn-crm--danger" id="inv-clear-history" style="height:34px;padding:0 12px;font-size:.73rem">🗑 Clear</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="inv-history-table" id="inv-history-table">
+        <thead><tr>
+          <th>Item</th><th>Qty</th><th>Checked Out To</th><th>Trek</th>
+          <th>Out Date</th><th>Return Date</th><th>Status</th><th>Notes</th>
+        </tr></thead>
+        <tbody id="inv-history-tbody"></tbody>
+      </table>
+    </div>
+    <div class="inv-hist-cards" id="inv-history-cards"></div>
+    <div class="inv-empty" id="inv-history-empty" style="display:none;border:none;padding:24px 0">
+      <p style="color:#3d5066;font-size:.82rem">No checkout history yet.</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== ADD / EDIT MODAL ===== -->
+<div class="inv-modal-overlay" id="item-modal">
+  <div class="inv-modal">
+    <button class="inv-modal__close" id="item-modal-close">✕</button>
+    <h3 id="item-modal-title">Add New Item</h3>
+    <form class="inv-modal-form" id="item-form" novalidate>
+      <input type="hidden" id="item-id" />
+      <div>
+        <label>Item Name *</label>
+        <input id="item-name" placeholder="e.g. Ice Axe — Black Diamond" required autocomplete="off" />
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Category *</label>
+          <select id="item-category" required>
+            <option value="">— Select —</option>
+            <option>Climbing</option><option>Camping</option><option>Trekking</option>
+            <option>Safety</option><option>Navigation</option><option>Kitchen</option>
+            <option>Medical</option><option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label>SKU / Code</label>
+          <input id="item-sku" placeholder="CLIMB-ICE-001" autocomplete="off" />
+        </div>
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Total Quantity *</label>
+          <input id="item-total" type="number" min="0" placeholder="10" required inputmode="numeric" />
+        </div>
+        <div>
+          <label>Available Qty *</label>
+          <input id="item-available" type="number" min="0" placeholder="10" required inputmode="numeric" />
+        </div>
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Low Stock Alert At</label>
+          <input id="item-lowat" type="number" min="0" placeholder="2" inputmode="numeric" />
+        </div>
+        <div>
+          <label>Condition</label>
+          <select id="item-condition">
+            <option>Good</option><option>Fair</option>
+            <option>Needs Repair</option><option>Retired</option>
+          </select>
+        </div>
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Storage Location</label>
+          <input id="item-location" placeholder="Store A, Shelf 2" autocomplete="off" />
+        </div>
+        <div>
+          <label>Purchase Price (₹)</label>
+          <input id="item-price" type="number" min="0" placeholder="2500" inputmode="numeric" />
+        </div>
+      </div>
+      <div>
+        <label>Notes</label>
+        <textarea id="item-notes" placeholder="Brand, serial number, purchase date…"></textarea>
+      </div>
+      <div class="inv-modal-actions">
+        <button type="button" class="btn-crm" id="item-modal-cancel">Cancel</button>
+        <button type="submit" class="btn-crm btn-crm--primary">Save Item</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="inv-modal-overlay" id="checkout-modal">
+  <div class="inv-modal">
+    <button class="inv-modal__close" id="checkout-modal-close">✕</button>
+    <h3>📤 Check Out Item</h3>
+    <form class="inv-modal-form" id="checkout-form" novalidate>
+      <div>
+        <label>Item *</label>
+        <select id="co-item" required><option value="">— Select item —</option></select>
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Quantity *</label>
+          <input id="co-qty" type="number" min="1" value="1" required inputmode="numeric" />
+        </div>
+        <div>
+          <label>Checked Out To *</label>
+          <input id="co-person" placeholder="Guide / person name" required autocomplete="off" />
+        </div>
+      </div>
+      <div>
+        <label>Trek / Expedition</label>
+        <input id="co-trek" placeholder="e.g. Kang Yatse II" autocomplete="off" />
+      </div>
+      <div class="inv-modal-grid2">
+        <div>
+          <label>Out Date</label>
+          <input id="co-outdate" type="date" />
+        </div>
+        <div>
+          <label>Expected Return</label>
+          <input id="co-returndate" type="date" />
+        </div>
+      </div>
+      <div>
+        <label>Notes</label>
+        <textarea id="co-notes" placeholder="Damage notes, special instructions…"></textarea>
+      </div>
+      <div class="inv-modal-actions">
+        <button type="button" class="btn-crm" id="checkout-modal-cancel">Cancel</button>
+        <button type="submit" class="btn-crm btn-crm--warn">Check Out</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== RETURN MODAL ===== -->
+<div class="inv-modal-overlay" id="return-modal">
+  <div class="inv-modal">
+    <button class="inv-modal__close" id="return-modal-close">✕</button>
+    <h3>📥 Return Item</h3>
+    <form class="inv-modal-form" id="return-form">
+      <input type="hidden" id="ret-history-id" />
+      <div>
+        <label>Return Quantity</label>
+        <input id="ret-qty" type="number" min="1" value="1" required inputmode="numeric" />
+      </div>
+      <div>
+        <label>Condition on Return</label>
+        <select id="ret-condition">
+          <option>Good</option><option>Fair</option>
+          <option>Needs Repair</option><option>Retired</option>
+        </select>
+      </div>
+      <div>
+        <label>Return Notes</label>
+        <textarea id="ret-notes" placeholder="Damage, missing parts…"></textarea>
+      </div>
+      <div class="inv-modal-actions">
+        <button type="button" class="btn-crm" id="return-modal-cancel">Cancel</button>
+        <button type="submit" class="btn-crm btn-crm--primary">Confirm Return</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="crm-auth.js"></script>
+<script>
+  window._FRADPAIX_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyHNppw-9Fc5ZJlM4P7rXffAvPkxSh7ST-jtR7c0WFzJfGC-jxPI2hdd7iM2z4kNMbh/exec';
+  requireCrmLogin();
+  initCrmLogout();
+</script>
+<script src="crm-inventory.js"></script>
+</body>
+</html>
