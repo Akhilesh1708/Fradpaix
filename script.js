@@ -13,7 +13,7 @@ document.head.appendChild(revealStyle);
 // Leave as empty string '' to disable (localStorage only).
 // =========================================
 window.FradpaixSheets = (function () {
-  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx7pPdkVJev2a2mNewuIjCv9eUmPBQ0sB5IshMjJ2dRADrg6JjyYm7e74E2BeRSZXq6/exec';
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyHNppw-9Fc5ZJlM4P7rXffAvPkxSh7ST-jtR7c0WFzJfGC-jxPI2hdd7iM2z4kNMbh/exec';
 
   // Expose URL for CRM to read back leads
   window._FRADPAIX_SHEETS_URL = SHEETS_URL;
