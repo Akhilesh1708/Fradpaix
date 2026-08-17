@@ -324,9 +324,14 @@ body { background: #040a12; color: var(--clr-text); }
       <div class="crm-page-header__actions">
         <span id="crm-sync-indicator" style="display:none;font-size:.78rem;color:#7aaef5;padding:0 8px">⟳ Syncing…</span>
         <button class="btn-crm" id="crm-refresh">⟳ Refresh</button>
+        <button class="btn-crm" id="crm-test-conn" title="Test connection to Google Sheets">🔗 Test Connection</button>
         <button class="btn-crm" id="crm-export">⬇ Export JSON</button>
         <button class="btn-crm btn-crm--danger admin-only" id="crm-clear" style="display:none">🗑 Clear All</button>
       </div>
+    </div>
+    
+    <!-- CONNECTION TEST RESULT -->
+    <div id="crm-conn-result" style="display:none;margin-bottom:16px;padding:14px 18px;border-radius:10px;border:1px solid #1a2b47;background:#02050d;font-size:.82rem;color:#7f8ba0;white-space:pre-wrap;word-break:break-all;font-family:monospace"></div>
     </div>
 
     <!-- STAT CARDS -->
@@ -477,7 +482,41 @@ body { background: #040a12; color: var(--clr-text); }
       document.getElementById('admin-settings').style.display = '';
     }
 
-    // Password change form
+     // Test connection button — shows raw response from Apps Script
+    document.getElementById('crm-test-conn')?.addEventListener('click', function() {
+      const url = window._FRADPAIX_SHEETS_URL;
+      const result = document.getElementById('crm-conn-result');
+      result.style.display = 'block';
+      result.style.borderColor = '#1a2b47';
+      result.textContent = '⟳ Testing connection to:\n' + url + '?type=leads\n\nWaiting for response…';
+
+      const cbName = '_fradpaixTest_' + Date.now();
+      const script = document.createElement('script');
+      const timer  = setTimeout(() => {
+        script.remove(); delete window[cbName];
+        result.style.borderColor = '#6e2a2a';
+        result.textContent = '✗ TIMEOUT — Apps Script did not respond in 10 seconds.\n\nMake sure you have:\n1. Redeployed with a New Version\n2. Set "Who has access" to Anyone\n3. The URL in crm.html matches your deployment URL';
+      }, 10000);
+
+      window[cbName] = function(data) {
+        clearTimeout(timer); script.remove(); delete window[cbName];
+        if (data && data.ok && Array.isArray(data.leads)) {
+          result.style.borderColor = '#2e7d32';
+          result.textContent = '✓ CONNECTION OK\n\nLeads found in sheet: ' + data.leads.length + '\n\n' + JSON.stringify(data.leads.slice(0,2), null, 2);
+        } else {
+          result.style.borderColor = '#b88a00';
+          result.textContent = '⚠ Connected but unexpected response:\n\n' + JSON.stringify(data, null, 2);
+        }
+      };
+
+      script.onerror = () => {
+        clearTimeout(timer); delete window[cbName];
+        result.style.borderColor = '#6e2a2a';
+        result.textContent = '✗ SCRIPT LOAD FAILED\n\nThe URL is unreachable or the Apps Script returned an error.\nCheck that the deployment is active and the URL is correct.';
+      };
+      script.src = url + '?type=leads&callback=' + cbName;
+      document.head.appendChild(script);
+    });
     document.getElementById('crm-pw-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
       const role    = document.getElementById('pw-role').value;
